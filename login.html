@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Oglądaj filmy, seriale i&nbsp;programy z&nbsp;serwisu Netflix online lub przesyłaj je do&nbsp;telewizora Smart TV, konsoli do&nbsp;gier, komputera PC bądź Mac, urządzenia przenośnego, tabletu i&nbsp;nie tylko."
+    />
+    <meta
+      name="keywords"
+      content="oglądanie filmów, oglądać filmy, filmy online, oglądać telewizję, telewizja online, programy telewizyjne online, oglądać programy TV, oglądać programy telewizyjne, strumieniowanie telewizji, przesyłanie strumieniowe telewizji, telewizja strumieniowo, natychmiastowe przesyłanie strumieniowe, oglądanie online, filmy, oglądanie filmów Polska, oglądać tv online, oglądać telewizję online, bez pobierania, filmy pełnometrażowe"
+    />
+
+    <link rel="icon" href="src/images/fav-64x64.png" />
+    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="src/styles/general.css" />
+    <link rel="stylesheet" href="src/styles/login.css" />
+
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" defer src="src/scripts/login.js"></script>
+    <script type="module" defer src="src/scripts/storage.js"></script>
+
+    <title>Netflix</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo-link" href="index.html">
+        <img class="logo" src="src/images/netlifx-logo.png" alt="Logo Netflixa"
+      /></a>
+    </header>
+
+    <main>
+      <section class="login-container">
+        <div class="login-form-main">
+          <h1 class="login-header">Zaloguj się</h1>
+          <div class="no-account-info hidden">
+            Niestety, nie możemy znaleźć konta z tym adresem e-mail. Spróbuj
+            ponownie lub
+            <a class="no-account-info-link" href="index.html"
+              >utwórz nowe konto</a
+            >.
+          </div>
+          <form method="post" class="login-form" autocomplete="off">
+            <div class="email-tel-container">
+              <input
+                id="email-input"
+                type="text"
+                name="login"
+                minlength="5"
+                maxlength="50"
+                required
+              />
+              <label for="email-input" class="email-label"
+                >E-mail lub numer telefonu</label
+              >
+            </div>
+            <p class="error-msg-email hidden">
+              Wprowadź prawidłowy adres e-mail lub numer telefonu.
+            </p>
+
+            <div class="password-container">
+              <input
+                id="password-input"
+                type="password"
+                name="password"
+                minlength="4"
+                maxlength="60"
+                required
+              />
+              <label for="password-input" class="password-label">Hasło</label>
+              <button class="toggle-password" type="button" title="Pokaż hasło">
+                POKAŻ
+              </button>
+            </div>
+            <p class="error-msg-password hidden">
+              Hasło musi mieć długość od 4 do 60 znaków.
+            </p>
+
+            <button class="btn btn-login" type="submit">Zaloguj się</button>
+
+            <div class="remember-me-container">
+              <div class="remember-me">
+                <input
+                  class="remember-checkbox"
+                  type="checkbox"
+                  value="true"
+                  checked
+                />
+                <label class="remember-me-label" for="checkbox">
+                  <span>Zapamiętaj mnie</span></label
+                >
+              </div>
+              <a href="#" class="login-help-link">Potrzebujesz pomocy?</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="login-form-other">
+          <p class="login-signup-info">
+            Nie masz jeszcze konta w serwisie Netflix?
+            <a href="index.html" class="login-signup-link">Zarejestruj się.</a>
+          </p>
+
+          <div class="captcha-container">
+            <p class="captcha-info">
+              Ta strona korzysta z zabezpieczenia Google reCAPTCHA, by upewnić
+              się, że nie jesteś botem.
+              <button class="btn-captcha">Dowiedz się więcej.</button>
+            </p>
+
+            <p class="captcha-description hidden-2">
+              Informacje gromadzone przez Google reCAPTCHA podlegają
+              <a
+                href="https://policies.google.com/privacy"
+                class="captcha-description-link"
+                target="_blank"
+                >Polityce prywatności</a
+              >
+              i
+              <a
+                href="https://policies.google.com/terms"
+                class="captcha-description-link"
+                target="_blank"
+                >Warunkom korzystania z usług</a
+              >
+              firmy Google i są wykorzystywane do świadczenia, utrzymywania i
+              doskonalenia usługi reCAPTCHA oraz do ogólnych celów
+              bezpieczeństwa (nie są wykorzystywane przez Google do wyświetlania
+              spersonalizowanych reklam).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-background" aria-hidden="true">
+        <section class="footer-section">
+          <p class="contact-tel">
+            Pytania? Zadzwoń pod numer
+            <a href="tel:00 800 112 4393">00 800 112 4392</a>
+          </p>
+
+          <ul class="footer-grid">
+            <li class="footer-link">
+              <a href="#">Często zadawane pytania</a>
+            </li>
+            <li class="footer-link"><a href="#">Centrum pomocy</a></li>
+            <li class="footer-link"><a href="#">Sklep Netflix</a></li>
+            <li class="footer-link"><a href="#">Warunki korzystania</a></li>
+            <li class="footer-link"><a href="#">Prywatność</a></li>
+            <li class="footer-link">
+              <a href="#">Ustawienia plików cookie</a>
+            </li>
+            <li class="footer-link"><a href="#">Informacje o firmie</a></li>
+          </ul>
+
+          <div class="lang-container">
+            <ion-icon class="globe-icon" name="globe-outline"></ion-icon>
+            <ion-icon
+              class="arrow-down-icon"
+              name="caret-down-outline"
+            ></ion-icon>
+            <select
+              onchange="javascript:location.href = this.value"
+              class="select-lang"
+              name="select-lang"
+              required
+            >
+              <option value="index.html">Polski</option>
+              <option value="index-en.html">English</option>
+            </select>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

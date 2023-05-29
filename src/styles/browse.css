@@ -1,0 +1,131 @@
+@import '/src/styles/general.css';
+@import '/src/styles/variables.css';
+
+/***************************/
+/* GENERAL STYLES  */
+/***************************/
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: var(--main-font-color);
+  background-color: #141414;
+}
+
+/***************************/
+/* PROFILES  */
+/***************************/
+
+.main-container {
+  padding: 3.2rem;
+  text-align: center;
+  animation: appear-content 0.45s forwards;
+}
+
+@keyframes appear-content {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profiles-heading {
+  font-size: 5.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.profiles-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto 4.4rem;
+  gap: 3.2rem;
+  padding: 4.8rem 3.2rem;
+  padding: 4.8rem 0;
+}
+
+.profile:hover .profile-img,
+.profile:focus .profile-img {
+  outline: 0.3rem solid #fff;
+  outline-offset: -0.3rem;
+}
+
+.profile:hover .profile-name,
+.profile:focus .profile-name {
+  color: #fff;
+}
+
+.profile-img {
+  display: block;
+  height: 16rem;
+  margin-bottom: 1.6rem;
+  border-radius: var(--default-border-radius);
+}
+
+.profile-name {
+  font-size: 2rem;
+  color: #808080;
+}
+
+.manage-profiles {
+  padding: 1.3rem 3.2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #808080;
+  cursor: pointer;
+  border: 0.1rem solid #808080;
+}
+
+.manage-profiles:hover,
+.manage-profiles:focus {
+  color: #fff;
+  border-color: #fff;
+}
+
+/***************************/
+/* MEDIA QUERY  */
+/***************************/
+
+/* 1000px */
+@media (max-width: 62.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* 800px */
+@media (max-width: 50em) {
+  html {
+    font-size: 43.75%;
+  }
+
+  .profiles-heading {
+    font-size: 4.4rem;
+    font-weight: 400;
+  }
+
+  .profiles-container {
+    padding: 2.8rem 0;
+    column-gap: 1.6rem;
+  }
+
+  .profile-img {
+    height: 12rem;
+  }
+}
+
+/* 320px */
+@media (max-width: 20em) {
+  .profiles-container {
+    column-gap: 0.8rem;
+  }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="src/images/fav-64x64.png" />
+    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="src/styles/general.css" />
+    <link rel="stylesheet" href="src/styles/browse.css" />
+
+    <title>Netflix</title>
+  </head>
+  <body>
+    <main class="main-container">
+      <h1 class="profiles-heading">Kto ogląda?</h1>
+
+      <div class="profiles-container">
+        <div class="profile" tabindex="1">
+          <a
+            href="https://pl.wikipedia.org/wiki/Fernando_Santos"
+            class="profile-link"
+            tabindex="-1"
+            target="_blank"
+          >
+            <img
+              src="src/images/profiles-ferdek.png"
+              alt="Awatar użytkownika Ferdek"
+              class="profile-img"
+            />
+            <span class="profile-name">Ferdek</span>
+          </a>
+        </div>
+        <div class="profile" tabindex="1">
+          <a
+            href="https://pl.wikipedia.org/wiki/Czes%C5%82aw_Michniewicz"
+            class="profile-link"
+            tabindex="-1"
+            target="_blank"
+          >
+            <img
+              src="src/images/profiles-czesiek.png"
+              alt="Awatar użytkownika Czesiek"
+              class="profile-img"
+            />
+            <span class="profile-name">Czesiek</span>
+          </a>
+        </div>
+        <div class="profile" tabindex="1">
+          <a
+            href="https://pl.wikipedia.org/wiki/Paulo_Sousa"
+            class="profile-link"
+            tabindex="-1"
+            target="_blank"
+          >
+            <img
+              src="src/images/profiles-pawel.png"
+              alt="Awatar użytkownika Paweł"
+              class="profile-img"
+            />
+            <span class="profile-name">Paweł</span>
+          </a>
+        </div>
+        <div class="profile" tabindex="1">
+          <a
+            href="https://pl.wikipedia.org/wiki/Jerzy_Brz%C4%99czek"
+            class="profile-link"
+            tabindex="-1"
+            target="_blank"
+          >
+            <img
+              src="src/images/profiles-jurek.png"
+              alt="Awatar użytkownika Jurek"
+              class="profile-img"
+            />
+            <span class="profile-name">Jurek</span>
+          </a>
+        </div>
+        <div class="profile" tabindex="1">
+          <a
+            href="https://pl.wikipedia.org/wiki/Adam_Nawa%C5%82ka"
+            class="profile-link"
+            tabindex="-1"
+            target="_blank"
+          >
+            <img
+              src="src/images/profiles-adam.png"
+              alt="Awatar użytkownika Adam"
+              class="profile-img"
+            />
+            <span class="profile-name">Adam</span>
+          </a>
+        </div>
+      </div>
+
+      <button type="button" class="manage-profiles">
+        <a href="index.html" tabindex="-1">Zarządzaj profilami</a>
+      </button>
+    </main>
+
+    <script>
+      if (!sessionStorage.getItem('isLoggedIn'))
+        window.location.href = 'login.html';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Oglądaj filmy, seriale i&nbsp;programy z&nbsp;serwisu Netflix online lub przesyłaj je do&nbsp;telewizora Smart TV, konsoli do&nbsp;gier, komputera PC bądź Mac, urządzenia przenośnego, tabletu i&nbsp;nie tylko."
+    />
+    <meta
+      name="keywords"
+      content="oglądanie filmów, oglądać filmy, filmy online, oglądać telewizję, telewizja online, programy telewizyjne online, oglądać programy TV, oglądać programy telewizyjne, strumieniowanie telewizji, przesyłanie strumieniowe telewizji, telewizja strumieniowo, natychmiastowe przesyłanie strumieniowe, oglądanie online, filmy, oglądanie filmów Polska, oglądać tv online, oglądać telewizję online, bez pobierania, filmy pełnometrażowe"
+    />
+
+    <link rel="icon" href="src/images/fav-64x64.png" />
+    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="src/styles/signup.css" />
+
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" defer src="src/scripts/storage.js"></script>
+
+    <title>Netflix</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a class="logo-link" href="index.html">
+        <img class="logo" src="src/images/netlifx-logo.png" alt="Logo Netflixa"
+      /></a>
+      <a href="login.html" class="login-link">Zaloguj się</a>
+    </header>
+
+    <main>
+      <section class="reg-container">
+        <figure class="reg-img"></figure>
+        <span class="reg-step"
+          >KROK <strong>1</strong> z <strong>3</strong></span
+        >
+        <h1 class="reg-heading">Dokończ konfigurację konta</h1>
+        <p class="reg-text">
+          Stwórz swój osobisty Netflix. Utwórz hasło, aby oglądać na dowolnym
+          urządzeniu, kiedy tylko zechcesz.
+        </p>
+        <button type="button" class="reg-btn">Dalej</button>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-background" aria-hidden="true">
+        <section class="footer-section">
+          <p class="contact-tel">
+            Pytania? Zadzwoń pod numer
+            <a href="tel:00 800 112 4393">00 800 112 4392</a>
+          </p>
+
+          <ul class="footer-grid">
+            <li class="footer-link"><a href="#">Często zadawane pytania</a></li>
+            <li class="footer-link"><a href="#">Centrum pomocy</a></li>
+            <li class="footer-link"><a href="#">Sklep Netflix</a></li>
+            <li class="footer-link"><a href="#">Warunki korzystania</a></li>
+            <li class="footer-link"><a href="#">Prywatność</a></li>
+            <li class="footer-link">
+              <a href="#">Ustawienia plików cookie</a>
+            </li>
+            <li class="footer-link"><a href="#">Informacje o firmie</a></li>
+          </ul>
+
+          <div class="lang-container">
+            <ion-icon class="globe-icon" name="globe-outline"></ion-icon>
+            <ion-icon
+              class="arrow-down-icon"
+              name="caret-down-outline"
+            ></ion-icon>
+            <select
+              onchange="javascript:location.href = this.value"
+              class="select-lang"
+              name="select-lang"
+              required
+            >
+              <option value="index.html">Polski</option>
+              <option value="index-en.html">English</option>
+            </select>
+          </div>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="src/images/fav-64x64.png" />
+    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="src/styles/home.css" />
+
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" defer src="src/scripts/storage.js"></script>
+    <script type="module" defer src="src/scripts/home.js"></script>
+
+    <title>Strona główna – Netflix</title>
+  </head>
+  <body>
+    <section class="main-view">
+      <header class="header">
+        <nav class="primary-navigation">
+          <a href="#" class="primary-nav-logo-link">
+            <img
+              src="/src/images/netlifx-logo.png"
+              alt="Logo Netflixa"
+              class="primary-nav-logo"
+            />
+          </a>
+          <ul class="primary-nav-items">
+            <li class="primary-nav-item">
+              <a href="#" class="current-active">Strona główna</a>
+            </li>
+            <li class="primary-nav-item">
+              <a href="#" class="">Seriale i&nbsp;programy</a>
+            </li>
+            <li class="primary-nav-item">
+              <a href="#" class="">Filmy</a>
+            </li>
+            <li class="primary-nav-item">
+              <a href="#" class="">Nowe i&nbsp;popularne</a>
+            </li>
+            <li class="primary-nav-item">
+              <a href="#" class="">Moja lista</a>
+            </li>
+            <li class="primary-nav-item">
+              <a href="#" class="">Przeglądaj wg języka</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="secondary-navigation">
+          <div class="secondary-nav-item">
+            <ion-icon class="search-icon" name="search-outline"></ion-icon>
+          </div>
+          <div class="secondary-nav-item">Dzieci</div>
+          <div class="secondary-nav-item">
+            <ion-icon
+              class="notifications-icon"
+              name="notifications-outline"
+            ></ion-icon>
+          </div>
+          <div class="secondary-nav-item">
+            <div class="profile-logo"></div>
+            <ion-icon
+              class="profile-arrow-down"
+              name="caret-down-outline"
+            ></ion-icon>
+            <ion-icon
+              class="profile-arrow-up"
+              name="caret-up-outline"
+            ></ion-icon>
+            <menu class="profile-drop-down"></menu>
+          </div>
+        </nav>
+      </header>
+
+      <div class="movie-info-container">
+        <img
+          src="src/images/heading-home.webp"
+          alt="Serial Ultraman"
+          class="main-img"
+        />
+        <h1 class="main-heading">Obejrzyj teraz sezon 3</h1>
+        <p class="main-text">
+          Lata temu superbohater zstąpił z nieba i zaprowadził pokój na świecie.
+          Dziś syn Ultramana musi zająć jego miejsce, by chronić Ziemię przed
+          nowym zagrożeniem z kosmosu.
+        </p>
+        <div class="btns-container">
+          <a class="btn-play-link" href="#">
+            <button class="btn-play">
+              <ion-icon class="btn-play-icon" name="play"></ion-icon>
+              <span>Odtwórz</span>
+            </button>
+          </a>
+          <button class="btn-more-info">
+            <ion-icon
+              class="btn-more-info-icon"
+              name="information-circle-outline"
+            ></ion-icon>
+            <span>Więcej informacji</span>
+          </button>
+        </div>
+      </div>
+
+      <span class="category-background"></span>
+      <div class="category-view-absolute">
+        <h2 class="category-heading">Top 10 filmów w&nbsp;Polsce dzisiaj</h2>
+        <div class="category-slider">
+          <ion-icon
+            class="slider-arrow-left"
+            name="chevron-back-outline"
+          ></ion-icon>
+          <div class="category-slider-content ranking">
+            <div class="slider-item-ranking">
+              <span class="slider-number">1</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">2</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">3</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number fixed-stroke">4</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">5</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">6</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">7</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">8</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">9</span>
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+            <div class="slider-item-ranking">
+              <span class="slider-number">10</span>
+
+              <img src="" alt="Miniaturka filmu" class="slider-img" />
+            </div>
+          </div>
+          <div class="slider-stripes"></div>
+          <ion-icon
+            class="slider-arrow-right"
+            name="chevron-forward-outline"
+          ></ion-icon>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <section class="category-section">
+        <div class="category-view">
+          <h2 class="category-heading">
+            Wciągające trzymające w&nbsp;napięciu seriale i&nbsp;programy
+            amerykańskie
+          </h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content">
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+            </div>
+            <div class="slider-stripes">
+              <!-- <span class="slider-dot filled"></span>
+              <span class="slider-dot"></span>
+              <span class="slider-dot"></span>
+              <span class="slider-dot"></span>
+              <span class="slider-dot"></span> -->
+            </div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Oglądaj dalej: Ola</h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content">
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+            </div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Popularne teraz</h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content">
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+            </div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Top 10 seriali w&nbsp;Polsce dzisiaj</h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content ranking">
+              <div class="slider-item-ranking">
+                <span class="slider-number">1</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">2</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">3</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number fixed-stroke">4</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">5</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">6</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">7</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">8</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">9</span>
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+              <div class="slider-item-ranking">
+                <span class="slider-number">10</span>
+
+                <img src="" alt="Miniaturka filmu" class="slider-img" />
+              </div>
+            </div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Popularne teraz</h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content">
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+            </div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Popularne teraz</h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content">
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+            </div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Popularne teraz</h2>
+          <div class="category-slider">
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div class="category-slider-content">
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item red"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+              <div class="slider-item blue"></div>
+            </div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-section">
+        <div class="footer-social-links">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/netflixpolska"
+            class="footer-social-link"
+          >
+            <ion-icon name="logo-facebook"></ion-icon
+          ></a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/netflixPL/"
+            class="footer-social-link"
+          >
+            <ion-icon name="logo-instagram"></ion-icon
+          ></a>
+          <a
+            target="_blank"
+            href="https://twitter.com/netflixpl"
+            class="footer-social-link"
+          >
+            <ion-icon name="logo-twitter"></ion-icon
+          ></a>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCwAiG5lj7w24SbgPy6eiYvg"
+            class="footer-social-link"
+          >
+            <ion-icon name="logo-youtube"></ion-icon
+          ></a>
+        </div>
+
+        <ul class="footer-grid">
+          <li class="footer-link"><a href="#">Audiodeskrypcja</a></li>
+          <li class="footer-link"><a href="#">Centrum pomocy</a></li>
+          <li class="footer-link"><a href="#">Karty podarunkowe</a></li>
+          <li class="footer-link"><a href="#">Media Center</a></li>
+          <li class="footer-link"><a href="#">Relacje z inwestorami</a></li>
+          <li class="footer-link"><a href="#">Praca</a></li>
+          <li class="footer-link"><a href="#">Warunki korzystania</a></li>
+          <li class="footer-link"><a href="#">Prywatność</a></li>
+          <li class="footer-link"><a href="#">Informacje prawne</a></li>
+          <li class="footer-link"><a href="#">Ustawienia plików cookie</a></li>
+          <li class="footer-link"><a href="#">Informacje o firmie</a></li>
+          <li class="footer-link"><a href="#">Skontaktuj się z nami</a></li>
+        </ul>
+
+        <button class="footer-service-code">Kod serwisowy</button>
+
+        <div class="footer-copyright">
+          <span>© 1997–2023 Netflix, Inc.</span>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

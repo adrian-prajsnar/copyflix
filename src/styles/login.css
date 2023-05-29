@@ -1,0 +1,459 @@
+@import '/src/styles/general.css';
+@import '/src/styles/variables.css';
+
+/***************************/
+/* GENERAL STYLES  */
+/***************************/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  background-image: url(/src/images/netflix-background2.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  isolation: isolate;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: var(--main-bg-color);
+  opacity: 0.5;
+}
+
+main {
+  margin: auto;
+}
+
+/***************************/
+/* HEADER SECTION */
+/***************************/
+
+.header {
+  padding: 1.8rem 3%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0, transparent);
+}
+
+.logo {
+  height: 5.5rem;
+}
+
+/***************************/
+/* LOGIN SECTION */
+/***************************/
+
+.login-container {
+  max-width: 45rem;
+  margin: 0 auto;
+  padding: 6.4rem 6.8rem 3.2rem;
+  background-color: rgb(0, 0, 0, 0.7);
+  border-radius: var(--default-border-radius);
+  margin-bottom: 9.2rem;
+}
+
+.login-form-main {
+  margin-bottom: 3.2rem;
+}
+
+.login-header {
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.no-account-info {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  padding: 1rem 2rem;
+  margin-bottom: 1.6rem;
+  color: #fff;
+  background-color: #e87c03;
+  border-radius: var(--default-border-radius);
+}
+
+.no-account-info-link {
+  border-bottom: 0.1rem solid #fff;
+}
+
+.no-account-info-link:focus-visible {
+  border-bottom: none;
+  outline-offset: 0.1rem;
+}
+
+.email-tel-container,
+.password-container {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.email-label,
+.password-label {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translate(0, -50%);
+  padding-right: 2rem;
+  pointer-events: none;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  color: #8c8c8c;
+  transition: font-size 0.1s ease, top 0.1s ease;
+}
+
+.toggle-password {
+  display: none;
+  height: 75%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 0 1.2rem;
+  transform: translate(0, -50%);
+  font-size: 1.4rem;
+  color: #8c8c8c;
+  background-color: #333;
+  cursor: pointer;
+}
+
+#password-input:focus-visible ~ .toggle-password {
+  display: block;
+}
+
+#email-input,
+#password-input {
+  height: 5rem;
+  width: 100%;
+  padding: 1.6rem 2rem 0;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.6rem;
+  border-radius: var(--default-border-radius);
+}
+
+#email-input:focus + .email-label,
+#email-input.has-value + .email-label,
+#password-input:focus + .password-label,
+#password-input.has-value + .password-label {
+  top: 1.4rem;
+  font-size: 1.2rem;
+}
+
+#email-input.has-error,
+#password-input.has-error {
+  border-bottom: 0.2rem solid #e87c03;
+}
+
+.error-msg-email,
+.error-msg-password {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: #e87c03;
+  padding: 0.6rem 0.3rem 1.4rem;
+  margin-top: -1.6rem;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 1.6rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  line-height: 1.2;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  color: #b3b3b3;
+}
+
+.remember-checkbox {
+  opacity: 0;
+  z-index: 1;
+  transform: scale(1.3);
+  -ms-transform: scale(1.3); /* IE */
+  -moz-transform: scale(1.3); /* FF */
+  -webkit-transform: scale(1.3); /* Safari and Chrome */
+  -o-transform: scale(1.3); /* Opera */
+}
+
+.remember-checkbox:focus + .remember-me-label::before {
+  background-color: #fff;
+}
+
+.remember-me-label::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: -0.1rem;
+  top: -0.1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #737373;
+  border-radius: 2px;
+}
+
+.remember-checkbox:checked + .remember-me-label::before {
+  content: '\2714';
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
+  background-color: #737373;
+  text-align: center;
+}
+
+.login-help-link {
+  font-size: 1.3rem;
+  color: #b3b3b3;
+  padding-bottom: 0.1rem;
+  border-bottom: 0.1rem solid transparent;
+}
+
+.login-help-link:hover {
+  border-bottom: 0.1rem solid #b3b3b3;
+}
+
+.login-help-link:focus-visible:hover,
+.btn-captcha:focus-visible:hover {
+  border-bottom: 0.1rem solid transparent;
+}
+
+.login-form-other {
+  font-size: 1.6rem;
+  line-height: 1.3;
+}
+
+.login-signup-info {
+  color: #737373;
+  margin-bottom: 1.4rem;
+}
+
+.login-signup-link {
+  color: #fff;
+}
+
+.login-signup-link:hover {
+  border-bottom: 0.1rem solid #fff;
+}
+
+.login-signup-link:focus-visible,
+.captcha-description-link:focus-visible,
+.btn-captcha:focus-visible,
+.select-lang:focus-visible {
+  outline-offset: 0rem;
+}
+
+.captcha-container {
+  font-size: 1.3rem;
+  color: #8c8c8c;
+}
+
+.btn-captcha {
+  color: #0071eb;
+  border-bottom: 0.1rem solid transparent;
+  margin-bottom: 1.2rem;
+  transition: opacity 0.1s ease, visibility 0.1s ease;
+}
+
+.btn-captcha:hover {
+  cursor: pointer;
+  border-bottom: 0.1rem solid #0071eb;
+}
+
+.captcha-description {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.captcha-description-link {
+  color: #0071eb;
+}
+
+.captcha-description-link:hover {
+  border-bottom: 0.1rem solid #0071eb;
+}
+
+/***************************/
+/* FOOTER SECTION  */
+/***************************/
+
+.footer-background {
+  background-color: rgb(0, 0, 0, 0.75);
+}
+
+.footer-section {
+  max-width: 114rem;
+  margin: 0 auto;
+  color: #737373;
+  padding: 4.8rem 0;
+}
+
+.contact-tel {
+  font-size: 1.6rem;
+  line-height: 1.4;
+}
+
+.contact-tel a,
+.footer-link a {
+  text-decoration: none;
+}
+
+.contact-tel a:focus-visible:hover,
+.footer-link a:focus-visible:hover,
+.login-signup-link:focus-visible:hover,
+.captcha-description-link:focus-visible:hover {
+  border-bottom: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3.2rem;
+  row-gap: 2rem;
+  padding: 3.2rem 0 2.4rem;
+}
+
+.footer-link {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.contact-tel a:hover,
+.footer-link a:hover {
+  border-bottom: 0.1rem solid #6e6e6e;
+}
+
+.lang-container {
+  display: inline-block;
+  position: relative;
+}
+
+.globe-icon {
+  position: absolute;
+  top: 50%;
+  left: 1.2rem;
+  transform: translate(0, -50%);
+  color: #999;
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+.arrow-down-icon {
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  transform: translate(0, -50%);
+  color: #999;
+  font-size: 1.6rem;
+  pointer-events: none;
+}
+
+.select-lang {
+  background-color: #000;
+  padding: 1.6rem 3.2rem 1.6rem 4rem;
+  font-size: 1.6rem;
+  border-radius: 2px;
+  border: 0.1rem solid #333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/***************************/
+/* MEDIA QUERY  */
+/***************************/
+
+/* 1300px */
+@media (max-width: 81.25em) {
+  .footer-section {
+    padding: 4.8rem;
+  }
+}
+
+/* 850px */
+@media (max-width: 53.125em) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 650px */
+@media (max-width: 40.625em) {
+  body {
+    background: var(--main-bg-color);
+  }
+
+  .logo {
+    height: 2.5rem;
+  }
+
+  .login-container {
+    max-width: 100%;
+    padding: 1.2rem 5%;
+    margin-bottom: 1.8rem;
+  }
+
+  .login-form-main {
+    margin-bottom: 4.8rem;
+  }
+
+  .footer-background {
+    border-top: 0.1rem solid #757575;
+  }
+
+  .footer-section {
+    padding: 3.2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 450px */
+@media (max-width: 28.125em) {
+  .footer-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .footer-section {
+    padding: 3.2rem 1.6rem;
+  }
+
+  .footer-grid {
+    row-gap: 1.6rem;
+  }
+}
+
+/* 300px */
+@media (max-width: 18.75em) {
+  .email-label,
+  .password-label {
+    font-size: 1.4rem;
+  }
+
+  #email-input:focus + .email-label,
+  #email-input.has-value + .email-label,
+  #password-input:focus + .password-label,
+  #password-input.has-value + .password-label {
+    font-size: 1.1rem;
+  }
+}

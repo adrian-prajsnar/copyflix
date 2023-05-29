@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Oglądaj filmy, seriale i&nbsp;programy z&nbsp;serwisu Netflix online lub przesyłaj je do&nbsp;telewizora Smart TV, konsoli do&nbsp;gier, komputera PC bądź Mac, urządzenia przenośnego, tabletu i&nbsp;nie tylko."
+    />
+    <meta
+      name="keywords"
+      content="oglądanie filmów, oglądać filmy, filmy online, oglądać telewizję, telewizja online, programy telewizyjne online, oglądać programy TV, oglądać programy telewizyjne, strumieniowanie telewizji, przesyłanie strumieniowe telewizji, telewizja strumieniowo, natychmiastowe przesyłanie strumieniowe, oglądanie online, filmy, oglądanie filmów Polska, oglądać tv online, oglądać telewizję online, bez pobierania, filmy pełnometrażowe"
+    />
+
+    <link rel="icon" href="src/images/fav-64x64.png" />
+    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="stylesheet" href="src/styles/main-queries.css" />
+
+    <script
+      defer
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      defer
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script type="module" defer src="src/scripts/main.js"></script>
+    <script type="module" defer src="src/scripts/storage.js"></script>
+
+    <title>
+      Netflix Polska &mdash; oglądaj seriale i&nbsp;programy online, oglądaj
+      filmy online
+    </title>
+  </head>
+
+  <body>
+    <section class="hero-section">
+      <header class="header">
+        <figure class="logo-container">
+          <img
+            class="logo"
+            src="src/images/netlifx-logo.png"
+            alt="Logo Neflixa"
+          />
+        </figure>
+        <div class="header-right">
+          <div class="lang-container">
+            <ion-icon class="globe-icon" name="globe-outline"></ion-icon>
+            <ion-icon
+              class="arrow-down-icon"
+              name="caret-down-outline"
+            ></ion-icon>
+            <select
+              onchange="javascript:location.href = this.value"
+              class="select-lang"
+              name="select-lang"
+              required
+            >
+              <option value="index.html">Polski</option>
+              <option value="index-en.html">English</option>
+            </select>
+          </div>
+          <button type="button" role="link" class="btn" tabindex="-1">
+            <a class="btn-login">Zaloguj się</a>
+          </button>
+        </div>
+      </header>
+
+      <section class="cta-section">
+        <h1 class="primary-heading">
+          Nieograniczona oferta filmów, seriali, programów i&nbsp;nie tylko.
+        </h1>
+        <p class="main-text">Oglądaj wszędzie. Anuluj w każdej chwili.</p>
+        <p class="cta-text">
+          Zaczynamy oglądać? Wprowadź adres e-mail, aby utworzyć lub odnowić
+          konto.
+        </p>
+        <form method="post" class="cta-form" autocomplete="on">
+          <div class="cta-input-container">
+            <input
+              class="cta-input"
+              type="email"
+              name="email"
+              minlength="5"
+              maxlength="50"
+              autocomplete="email"
+              required
+            />
+            <label for="cta-input" class="cta-label">Adres e-mail</label>
+            <div class="error-msg-container hidden">
+              <ion-icon
+                class="error-msg-icon"
+                name="close-circle-outline"
+                aria-hidden="true"
+              ></ion-icon>
+              <p class="error-msg">Adres e-mail jest wymagany.</p>
+            </div>
+          </div>
+          <button class="btn btn-cta" role="button" type="submit">
+            Rozpocznij
+            <ion-icon
+              class="btn-icon"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </button>
+        </form>
+      </section>
+      <span class="border-bottom"></span>
+    </section>
+
+    <main>
+      <section class="about-section">
+        <div class="about-text-container">
+          <h2 class="secondary-heading">Oglądaj na telewizorze.</h2>
+          <p class="main-text">
+            Oglądaj na telewizorach Smart TV, konsolach PlayStation i&nbsp;Xbox,
+            odtwarzaczach Chromecast, Apple TV oraz Blu-ray i&nbsp;nie tylko.
+          </p>
+        </div>
+        <figure class="about-img-container">
+          <img
+            src="src/images/netflix-tv2.png"
+            alt="Aplikacja Netflixa na telewizorze"
+          />
+        </figure>
+        <span class="border-bottom"></span>
+      </section>
+
+      <section class="about-section">
+        <figure class="about-img-container">
+          <img
+            src="src/images/netflix-offline2.png"
+            alt="Pobieranie filmu na telefon"
+          />
+        </figure>
+        <div class="about-text-container">
+          <h2 class="secondary-heading">
+            Pobierz ulubione tytuły i&nbsp;oglądaj offline.
+          </h2>
+          <p class="main-text">
+            Zapisz ulubione tytuły, aby zawsze mieć coś do obejrzenia.
+          </p>
+        </div>
+        <span class="border-bottom"></span>
+      </section>
+
+      <section class="about-section">
+        <div class="about-text-container">
+          <h2 class="secondary-heading">Oglądaj wszędzie.</h2>
+          <p class="main-text">
+            Oglądaj filmy, seriale i&nbsp;programy bez ograniczeń na telefonie,
+            tablecie, laptopie, telewizorze... Bez dodatkowych opłat.
+          </p>
+        </div>
+        <figure class="about-img-container">
+          <img
+            src="src/images/netflix-watch-everywhere2.png"
+            alt="Aplikacja Netflixa na telewizorze, tablecie, telefonie"
+          />
+        </figure>
+        <span class="border-bottom"></span>
+      </section>
+
+      <section class="about-section">
+        <figure class="about-img-container">
+          <img
+            src="src/images/netflix-kids2.png"
+            alt="Rodzic, zadowolone dziecko, królik"
+          />
+        </figure>
+        <div class="about-text-container">
+          <h2 class="secondary-heading">Utwórz profile dla dzieci.</h2>
+          <p class="main-text">
+            Pozwól dzieciom przeżywać przygody w&nbsp;towarzystwie uwielbianych
+            bohaterów &mdash; w&nbsp;specjalnej sekcji serwisu oferowanej
+            bezpłatnie w&nbsp;ramach członkostwa.
+          </p>
+        </div>
+        <span class="border-bottom"></span>
+      </section>
+
+      <section class="faq-section" id="faq-and-cta-view">
+        <h2 class="secondary-heading">Często zadawane pytania</h2>
+        <menu class="faq-accordion">
+          <button type="button" class="accordion-item">
+            <h3 class="accordion-heading">Czym jest Netflix?</h3>
+            <div>
+              <ion-icon
+                class="accordion-icon-open"
+                name="add-outline"
+              ></ion-icon>
+              <ion-icon
+                class="accordion-icon-close hidden"
+                name="close-outline"
+              ></ion-icon>
+            </div>
+          </button>
+          <p class="accordion-item-description">
+            Netflix to usługa przesyłania strumieniowego, dzięki której
+            użytkownicy mogą korzystać z szerokiej oferty nagradzanych filmów,
+            seriali, programów, anime oraz produkcji dokumentalnych za
+            pośrednictwem tysięcy urządzeń połączonych z&nbsp;internetem.
+            <br />
+            <br />
+            Możesz oglądać do woli, gdziekolwiek jesteś — bez reklam i&nbsp;za
+            jedną miesięczną opłatą. Co tydzień dodajemy nowe tytuły, więc
+            zawsze jest coś ciekawego do obejrzenia.
+          </p>
+
+          <button type="button" class="accordion-item">
+            <h3 class="accordion-heading">
+              Ile kosztuje korzystanie z serwisu Netflix?
+            </h3>
+            <div>
+              <ion-icon
+                class="accordion-icon-open"
+                name="add-outline"
+              ></ion-icon>
+              <ion-icon
+                class="accordion-icon-close hidden"
+                name="close-outline"
+              ></ion-icon>
+            </div>
+          </button>
+          <p class="accordion-item-description">
+            Oglądaj materiały z serwisu Netflix na smartfonie, tablecie,
+            telewizorze Smart TV, laptopie lub innym urządzeniu do odtwarzania
+            &mdash; za jedną stałą opłatą miesięczną. Mamy plany w&nbsp;cenie od
+            29 zł do 60 zł miesięcznie. Bez dodatkowych kosztów i&nbsp;bez umów.
+          </p>
+
+          <button type="button" class="accordion-item">
+            <h3 class="accordion-heading">Gdzie mogę oglądać?</h3>
+            <div>
+              <ion-icon
+                class="accordion-icon-open"
+                name="add-outline"
+              ></ion-icon>
+              <ion-icon
+                class="accordion-icon-close hidden"
+                name="close-outline"
+              ></ion-icon>
+            </div>
+          </button>
+          <p class="accordion-item-description">
+            Oglądaj, gdzie i&nbsp;kiedy chcesz. Zaloguj się za pomocą danych
+            swojego konta w&nbsp;witrynie netflix.com na komputerze lub na innym
+            urządzeniu z&nbsp;dostępem do Internetu i&nbsp;zainstalowaną
+            aplikacją Netflix, takim jak telewizor Smart TV, smartfon, tablet,
+            odtwarzacz multimedialny czy konsola do gier.
+            <br />
+            <br />
+            Możesz także pobierać ulubione programy na urządzenia przenośne
+            z&nbsp;systemem iOS lub Android oraz na urządzenia z&nbsp;aplikacją
+            dla systemu Windows 10. Pobrane tytuły możesz oglądać poza domem,
+            bez połączenia z&nbsp;internetem. Korzystaj z&nbsp;serwisu Netflix,
+            gdzie tylko chcesz.
+          </p>
+
+          <button type="button" class="accordion-item">
+            <h3 class="accordion-heading">
+              Jak zrezygnować z&nbsp;członkostwa?
+            </h3>
+            <div>
+              <ion-icon
+                class="accordion-icon-open"
+                name="add-outline"
+              ></ion-icon>
+              <ion-icon
+                class="accordion-icon-close hidden"
+                name="close-outline"
+              ></ion-icon>
+            </div>
+          </button>
+          <p class="accordion-item-description">
+            Netflix niczego nie narzuca. Żadnych zbędnych umów ani zobowiązań.
+            Możesz w&nbsp;łatwy sposób anulować członkostwo online &mdash;
+            wystarczą dwa kliknięcia. Nie naliczamy opłat za rezygnację, dlatego
+            możesz rozpocząć członkostwo i&nbsp;zrezygnować z&nbsp;niego
+            w&nbsp;dowolnej chwili.
+          </p>
+
+          <button type="button" class="accordion-item">
+            <h3 class="accordion-heading">
+              Jakie materiały mogę oglądać w&nbsp;serwisie Netflix?
+            </h3>
+            <div>
+              <ion-icon
+                class="accordion-icon-open"
+                name="add-outline"
+              ></ion-icon>
+              <ion-icon
+                class="accordion-icon-close hidden"
+                name="close-outline"
+              ></ion-icon>
+            </div>
+          </button>
+          <p class="accordion-item-description">
+            Serwis Netflix oferuje dostęp do obszernej biblioteki zawierającej
+            filmy pełnometrażowe i&nbsp;dokumentalne, seriale, programy, anime,
+            nagradzane Netflix Originals i&nbsp;nie tylko. Oglądaj do woli,
+            kiedy tylko chcesz.
+          </p>
+
+          <button type="button" class="accordion-item">
+            <h3 class="accordion-heading">
+              Czy Netflix jest odpowiedni dla dzieci?
+            </h3>
+            <div>
+              <ion-icon
+                class="accordion-icon-open"
+                name="add-outline"
+              ></ion-icon>
+              <ion-icon
+                class="accordion-icon-close hidden"
+                name="close-outline"
+              ></ion-icon>
+            </div>
+          </button>
+          <p class="accordion-item-description">
+            W ramach członkostwa w serwisie Netflix otrzymujesz dostęp do
+            specjalnej sekcji dla dzieci. Młodzi widzowie mogą oglądać tam
+            filmy, seriale i&nbsp;programy przeznaczone właśnie dla nich,
+            a&nbsp; rodzice mają nad wszystkim kontrolę.
+            <br />
+            <br />
+            Profile dla dzieci chronione są kodem PIN kontroli rodzicielskiej,
+            który uniemożliwia dostęp do treści przekraczających określone
+            kategorie wiekowe, a&nbsp;także pozwala blokować konkretne tytuły.
+          </p>
+        </menu>
+
+        <p class="cta-text">
+          Zaczynamy oglądać? Wprowadź adres e-mail, aby utworzyć lub odnowić
+          konto.
+        </p>
+        <form class="cta-form" autocomplete="on">
+          <div class="cta-input-container">
+            <input
+              class="cta-input"
+              type="email"
+              name="email"
+              minlength="5"
+              maxlength="50"
+              autocomplete="email"
+              value=""
+              required
+            />
+            <label for="cta-input" class="cta-label">Adres e-mail</label>
+            <div class="error-msg-container hidden">
+              <ion-icon
+                class="error-msg-icon"
+                name="close-circle-outline"
+                aria-hidden="true"
+              ></ion-icon>
+              <p class="error-msg">Adres e-mail jest wymagany.</p>
+            </div>
+          </div>
+          <button class="btn btn-cta" role="button" type="submit">
+            Rozpocznij
+            <ion-icon
+              class="btn-icon"
+              name="chevron-forward-outline"
+            ></ion-icon>
+          </button>
+        </form>
+        <span class="border-bottom"></span>
+      </section>
+    </main>
+
+    <footer>
+      <section class="footer-section">
+        <p class="contact-tel">
+          Pytania? Zadzwoń pod numer
+          <a href="tel:00 800 112 4393">00 800 112 4392</a>
+        </p>
+
+        <ul class="footer-grid">
+          <li class="footer-link"><a href="#">Centrum pomocy</a></li>
+          <li class="footer-link">
+            <a href="#faq-and-cta-view">Często zadawane pytania</a>
+          </li>
+          <li class="footer-link"><a href="#">Konto</a></li>
+          <li class="footer-link"><a href="#">Media Center</a></li>
+          <li class="footer-link">
+            <a href="#">Relacje z&nbsp;inwestorami</a>
+          </li>
+          <li class="footer-link"><a href="#">Praca</a></li>
+          <li class="footer-link">
+            <a href="#">Zrealizuj karty podarunkowe</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">Kup karty podarunkowe</a>
+          </li>
+          <li class="footer-link"><a href="#">Jak oglądać?</a></li>
+          <li class="footer-link"><a href="#">Warunki korzystania</a></li>
+          <li class="footer-link"><a href="#">Prywatność</a></li>
+          <li class="footer-link">
+            <a href="#">Ustawienia plików cookie</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">Informacje o&nbsp;firmie</a>
+          </li>
+          <li class="footer-link">
+            <a href="#">Skontaktuj się z&nbsp;nami</a>
+          </li>
+          <li class="footer-link">
+            <a href="https://fast.com/" target="_blank"
+              >Test prędkości połączenia</a
+            >
+          </li>
+          <li class="footer-link"><a href="#">Gwarancja prawna</a></li>
+          <li class="footer-link"><a href="#">Informacje prawne</a></li>
+          <li class="footer-link"><a href="#">Tylko na Netflix</a></li>
+        </ul>
+
+        <div class="lang-container">
+          <ion-icon class="globe-icon" name="globe-outline"></ion-icon>
+          <ion-icon
+            class="arrow-down-icon"
+            name="caret-down-outline"
+          ></ion-icon>
+          <select
+            onchange="javascript:location.href = this.value"
+            class="select-lang"
+            name="select-lang"
+            required
+          >
+            <option value="index.html">Polski</option>
+            <option value="index-en.html">English</option>
+          </select>
+        </div>
+        <p class="brand-location">Netflix Polska</p>
+      </section>
+    </footer>
+  </body>
+</html>

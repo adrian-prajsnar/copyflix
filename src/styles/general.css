@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/***************************/
+/* General styles  */
+/***************************/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  z-index: 1000;
+  outline: none;
+  outline-style: solid;
+  outline-width: 0.2rem;
+  outline-offset: 0.2rem;
+  outline-color: #fff;
+  border-radius: var(--default-border-radius);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,
+a {
+  color: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  border: none;
+  text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 3rem rgba(70, 90, 126, 0.4) inset !important;
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: var(--main-font-color) !important;
+}
+
+/* Default button styles */
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-color);
+  border: none;
+  border-radius: var(--default-border-radius);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:active {
+  background-color: var(--brand-color-darker);
+}
+
+/***************************/
+/* Helpers  */
+/***************************/
+
+.hidden {
+  display: none !important;
+}
+
+.hidden-2 {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
