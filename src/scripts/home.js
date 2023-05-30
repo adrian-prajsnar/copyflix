@@ -10,6 +10,29 @@ function sitckyNav() {
 window.document.addEventListener('DOMContentLoaded', sitckyNav);
 window.document.addEventListener('scroll', sitckyNav);
 
+// SECONDARY NAV - ACTIVATION
+const profileContainer = document.querySelectorAll('.secondary-nav-item')[3];
+const profileArrowDown = document.querySelector('.profile-arrow-down');
+const profileArrowUp = document.querySelector('.profile-arrow-up');
+const profileDropDown = document.querySelector('.profile-drop-down');
+
+let timeoutId;
+
+profileContainer.addEventListener('mouseover', () => {
+  clearTimeout(timeoutId);
+  profileDropDown.classList.add('active');
+  profileArrowUp.classList.add('active');
+  profileArrowDown.style.transform = 'rotate(180deg)';
+});
+
+profileContainer.addEventListener('mouseout', () => {
+  timeoutId = setTimeout(() => {
+    profileDropDown.classList.remove('active');
+    profileArrowUp.classList.remove('active');
+    profileArrowDown.style.transform = 'rotate(0deg)';
+  }, 300);
+});
+
 // SLIDER FUNCTIONALITY
 const slider = document.querySelectorAll('.category-slider');
 
@@ -123,3 +146,6 @@ slider.forEach(slider => {
 });
 
 */
+
+// SESSION/LOCAL STORAGE
+if (!sessionStorage.getItem('isLoggedIn')) window.location.href = 'login.html';

@@ -140,3 +140,9 @@ btnCaptcha.addEventListener('click', () => {
   btnCaptcha.classList.add('hidden-2');
   captchaDescription.classList.remove('hidden-2');
 });
+
+// SESSION/LOCAL STORAGE
+if (sessionStorage.getItem('isLoggedIn')) window.location.href = 'browse.html';
+
+if (sessionStorage.getItem('profileSelected'))
+  window.location.href = 'home.html';

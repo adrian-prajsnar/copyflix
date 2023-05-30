@@ -244,7 +244,13 @@ function togglePopUp() {
   }, 500);
 }
 
+// SESSION/LOCAL STORAGE
 if (!sessionStorage.getItem('isFirstTimeLoaded')) {
   setTimeout(() => togglePopUp(), 5000);
   sessionStorage.setItem('isFirstTimeLoaded', true);
 }
+
+if (sessionStorage.getItem('isLoggedIn')) window.location.href = 'browse.html';
+
+if (sessionStorage.getItem('profileSelected'))
+  window.location.href = 'home.html';

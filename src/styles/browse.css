@@ -52,14 +52,18 @@ body {
   padding: 4.8rem 0;
 }
 
-.profile:hover .profile-img,
-.profile:focus .profile-img {
+.profile-link {
+  display: block;
+}
+
+.profile-link:hover .profile-img,
+.profile-link:focus .profile-img {
   outline: 0.3rem solid #fff;
   outline-offset: -0.3rem;
 }
 
-.profile:hover .profile-name,
-.profile:focus .profile-name {
+.profile-link:hover .profile-name,
+.profile-link:focus .profile-name {
   color: #fff;
 }
 

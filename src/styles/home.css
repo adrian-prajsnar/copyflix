@@ -93,15 +93,6 @@ body {
   cursor: pointer;
 }
 
-.secondary-nav-item:last-child:hover .profile-arrow-down {
-  transform: rotate(180deg);
-}
-
-.secondary-nav-item:last-child:hover .profile-drop-down,
-.secondary-nav-item:last-child:hover .profile-arrow-up {
-  opacity: 1;
-}
-
 .search-icon,
 .notifications-icon {
   /* font-size: 1.5vw; */
@@ -130,7 +121,8 @@ body {
   color: #e6e6e6;
   z-index: 1;
   opacity: 0;
-  transition: opacity 150ms;
+  visibility: hidden;
+  transition: opacity 150ms, visibility 150ms;
 }
 
 .profile-drop-down {
@@ -139,11 +131,33 @@ body {
   right: 0;
   width: 220px;
   height: 380px;
+  padding: 1.8rem 1.2rem;
   font-size: 1.3rem;
   background-color: rgba(0, 0, 0, 0.9);
   border: 1px solid hsla(0, 0%, 100%, 0.15);
+  cursor: default;
   opacity: 0;
-  transition: opacity 150ms;
+  visibility: hidden;
+  /* opacity: 1;
+  visibility: visible; */
+  transition: opacity 150ms, visibility 150ms;
+}
+
+.profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.profile {
+  list-style: none;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 0.8rem;
 }
 
 /***************************/

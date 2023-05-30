@@ -93,3 +93,8 @@ input:-webkit-autofill {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
+.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

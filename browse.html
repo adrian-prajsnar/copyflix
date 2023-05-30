@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="src/styles/general.css" />
     <link rel="stylesheet" href="src/styles/browse.css" />
 
+    <script type="module" defer src="src/scripts/browse.js"></script>
+
     <title>Netflix</title>
   </head>
   <body>
@@ -18,13 +20,8 @@
       <h1 class="profiles-heading">Kto ogląda?</h1>
 
       <div class="profiles-container">
-        <div class="profile" tabindex="1">
-          <a
-            href="https://pl.wikipedia.org/wiki/Fernando_Santos"
-            class="profile-link"
-            tabindex="-1"
-            target="_blank"
-          >
+        <div class="profile">
+          <a href="home.html" class="profile-link">
             <img
               src="src/images/profiles-ferdek.png"
               alt="Awatar użytkownika Ferdek"
@@ -33,13 +30,8 @@
             <span class="profile-name">Ferdek</span>
           </a>
         </div>
-        <div class="profile" tabindex="1">
-          <a
-            href="https://pl.wikipedia.org/wiki/Czes%C5%82aw_Michniewicz"
-            class="profile-link"
-            tabindex="-1"
-            target="_blank"
-          >
+        <div class="profile">
+          <a href="home.html" class="profile-link">
             <img
               src="src/images/profiles-czesiek.png"
               alt="Awatar użytkownika Czesiek"
@@ -48,13 +40,8 @@
             <span class="profile-name">Czesiek</span>
           </a>
         </div>
-        <div class="profile" tabindex="1">
-          <a
-            href="https://pl.wikipedia.org/wiki/Paulo_Sousa"
-            class="profile-link"
-            tabindex="-1"
-            target="_blank"
-          >
+        <div class="profile">
+          <a href="home.html" class="profile-link">
             <img
               src="src/images/profiles-pawel.png"
               alt="Awatar użytkownika Paweł"
@@ -63,13 +50,8 @@
             <span class="profile-name">Paweł</span>
           </a>
         </div>
-        <div class="profile" tabindex="1">
-          <a
-            href="https://pl.wikipedia.org/wiki/Jerzy_Brz%C4%99czek"
-            class="profile-link"
-            tabindex="-1"
-            target="_blank"
-          >
+        <div class="profile">
+          <a href="home.html" class="profile-link">
             <img
               src="src/images/profiles-jurek.png"
               alt="Awatar użytkownika Jurek"
@@ -78,13 +60,8 @@
             <span class="profile-name">Jurek</span>
           </a>
         </div>
-        <div class="profile" tabindex="1">
-          <a
-            href="https://pl.wikipedia.org/wiki/Adam_Nawa%C5%82ka"
-            class="profile-link"
-            tabindex="-1"
-            target="_blank"
-          >
+        <div class="profile">
+          <a href="home.html" class="profile-link">
             <img
               src="src/images/profiles-adam.png"
               alt="Awatar użytkownika Adam"
@@ -99,10 +76,5 @@
         <a href="index.html" tabindex="-1">Zarządzaj profilami</a>
       </button>
     </main>
-
-    <script>
-      if (!sessionStorage.getItem('isLoggedIn'))
-        window.location.href = 'login.html';
-    </script>
   </body>
 </html>
