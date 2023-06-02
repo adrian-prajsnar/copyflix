@@ -59,7 +59,25 @@
 
         <nav class="secondary-navigation">
           <div class="secondary-nav-item">
-            <ion-icon class="search-icon" name="search-outline"></ion-icon>
+            <button class="search-btn">
+              <ion-icon class="search-icon" name="search-outline"></ion-icon>
+            </button>
+
+            <div class="search-container hidden">
+              <button class="search-btn-absolute">
+                <ion-icon class="search-icon" name="search-outline"></ion-icon>
+              </button>
+              <label for="search-input" class="search-label"
+                >Tytuły, osoby, gatunki</label
+              >
+              <input type="text" class="search-input" />
+              <button class="search-close hidden">
+                <ion-icon
+                  class="search-close-icon"
+                  name="close-outline"
+                ></ion-icon>
+              </button>
+            </div>
           </div>
           <div class="secondary-nav-item">Dzieci</div>
           <div class="secondary-nav-item">
@@ -67,6 +85,13 @@
               class="notifications-icon"
               name="notifications-outline"
             ></ion-icon>
+            <ion-icon
+              class="profile-arrow-up-notification"
+              name="caret-up-outline"
+            ></ion-icon>
+            <div class="notifications-container">
+              <span class="notifications-text">Brak nowych powiadomień</span>
+            </div>
           </div>
           <div class="secondary-nav-item">
             <div class="profile-logo"></div>
@@ -79,7 +104,7 @@
               name="caret-up-outline"
             ></ion-icon>
             <menu class="profile-drop-down">
-              <ul class="profiles">
+              <ul class="profiles-list">
                 <li class="profile">
                   <a href="#" class="profile-link">
                     <div class="profile-logo"></div>
@@ -105,6 +130,57 @@
                   </a>
                 </li>
               </ul>
+              <ul class="profiles-managment-list">
+                <li class="profile-managment">
+                  <a href="#" class="profile-link">
+                    <div class="profile-icon-container">
+                      <ion-icon
+                        class="profile-icon"
+                        name="build-outline"
+                      ></ion-icon>
+                    </div>
+                    <span class="profile-name">Zarządzaj profilami</span>
+                  </a>
+                </li>
+                <li class="profile-managment">
+                  <a href="#" class="profile-link">
+                    <div class="profile-icon-container">
+                      <ion-icon
+                        class="profile-icon"
+                        name="copy-outline"
+                      ></ion-icon>
+                    </div>
+                    <span class="profile-name">Przenieś profil</span>
+                  </a>
+                </li>
+                <li class="profile-managment">
+                  <a href="#" class="profile-link">
+                    <div class="profile-icon-container">
+                      <ion-icon
+                        class="profile-icon"
+                        name="person-outline"
+                      ></ion-icon>
+                    </div>
+                    <span class="profile-name">Konto</span>
+                  </a>
+                </li>
+                <li class="profile-managment">
+                  <a href="#" class="profile-link">
+                    <div class="profile-icon-container">
+                      <div class="profile-icon-container">
+                        <ion-icon
+                          class="profile-icon"
+                          name="help-circle-outline"
+                        ></ion-icon>
+                      </div>
+                    </div>
+                    <span class="profile-name">Centrum pomocy</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="profile-logout">
+                <a href="#" class="profile-logout-link">Wyloguj się</a>
+              </div>
             </menu>
           </div>
         </nav>

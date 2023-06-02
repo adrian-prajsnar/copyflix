@@ -10,23 +10,87 @@ function sitckyNav() {
 window.document.addEventListener('DOMContentLoaded', sitckyNav);
 window.document.addEventListener('scroll', sitckyNav);
 
-// SECONDARY NAV - ACTIVATION
-const profileContainer = document.querySelectorAll('.secondary-nav-item')[3];
+// SECONDARY NAV - SEARCH ACTIVATION
+const searchOpen = document.querySelector('.search-btn');
+const searchContainer = document.querySelector('.search-container');
+const searchInput = document.querySelector('.search-input');
+const searchLabel = document.querySelector('.search-label');
+const searchClose = document.querySelector('.search-close');
+
+searchOpen.addEventListener('click', () => {
+  searchContainer.classList.remove('hidden');
+  searchOpen.classList.add('hidden');
+  searchInput.focus();
+  searchInput.classList.add('expanded');
+});
+
+searchInput.addEventListener('focusout', () => {
+  searchContainer.classList.add('hidden');
+  searchOpen.classList.remove('hidden');
+  searchInput.value = '';
+  searchLabel.classList.remove('hidden');
+  searchClose.classList.add('hidden');
+  searchInput.classList.remove('expanded');
+});
+
+searchInput.addEventListener('input', e => {
+  const text = e.target.value;
+  text
+    ? searchLabel.classList.add('hidden')
+    : searchLabel.classList.remove('hidden');
+  text
+    ? searchClose.classList.remove('hidden')
+    : searchClose.classList.add('hidden');
+});
+
+searchClose.addEventListener('mousedown', e => {
+  e.preventDefault();
+  searchInput.value = '';
+  searchInput.focus();
+  searchLabel.classList.remove('hidden');
+  searchClose.classList.add('hidden');
+});
+
+// SECONDARY NAV - NOTIFICATIONS ACTIVATION
+const notifNav = document.querySelectorAll('.secondary-nav-item')[2];
+const notifContainer = document.querySelector('.notifications-container');
+const notifArrowUp = document.querySelector('.profile-arrow-up-notification');
+let notifTimeout;
+
+notifNav.addEventListener('mouseover', () => {
+  profileDropDown.classList.remove('active');
+  profileArrowUp.classList.remove('active');
+  profileArrowDown.style.transform = 'rotate(0deg)';
+  clearTimeout(notifTimeout);
+  notifContainer.classList.add('active');
+  notifArrowUp.classList.add('active');
+});
+
+notifNav.addEventListener('mouseout', () => {
+  notifTimeout = setTimeout(() => {
+    notifContainer.classList.remove('active');
+    notifArrowUp.classList.remove('active');
+  }, 300);
+});
+
+// SECONDARY NAV - PROFILE ACTIVATION
+const profileNav = document.querySelectorAll('.secondary-nav-item')[3];
 const profileArrowDown = document.querySelector('.profile-arrow-down');
 const profileArrowUp = document.querySelector('.profile-arrow-up');
 const profileDropDown = document.querySelector('.profile-drop-down');
+let profileTimeout;
 
-let timeoutId;
-
-profileContainer.addEventListener('mouseover', () => {
-  clearTimeout(timeoutId);
+profileNav.addEventListener('mouseover', () => {
+  notifContainer.classList.remove('active');
+  notifArrowUp.classList.remove('active');
+  clearTimeout(profileTimeout);
   profileDropDown.classList.add('active');
   profileArrowUp.classList.add('active');
   profileArrowDown.style.transform = 'rotate(180deg)';
 });
 
-profileContainer.addEventListener('mouseout', () => {
-  timeoutId = setTimeout(() => {
+profileNav.addEventListener('mouseout', () => {
+  profileTimeout = setTimeout(() => {
     profileDropDown.classList.remove('active');
     profileArrowUp.classList.remove('active');
     profileArrowDown.style.transform = 'rotate(0deg)';
