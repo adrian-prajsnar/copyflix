@@ -37,22 +37,24 @@
           </a>
           <ul class="primary-nav-items">
             <li class="primary-nav-item">
-              <a href="#" class="current-active">Strona główna</a>
+              <a href="#" class="primary-nav-link current-active"
+                >Strona główna</a
+              >
             </li>
             <li class="primary-nav-item">
-              <a href="#" class="">Seriale i&nbsp;programy</a>
+              <a href="#" class="primary-nav-link">Seriale i&nbsp;programy</a>
             </li>
             <li class="primary-nav-item">
-              <a href="#" class="">Filmy</a>
+              <a href="#" class="primary-nav-link">Filmy</a>
             </li>
             <li class="primary-nav-item">
-              <a href="#" class="">Nowe i&nbsp;popularne</a>
+              <a href="#" class="primary-nav-link">Nowe i&nbsp;popularne</a>
             </li>
             <li class="primary-nav-item">
-              <a href="#" class="">Moja lista</a>
+              <a href="#" class="primary-nav-link">Moja lista</a>
             </li>
             <li class="primary-nav-item">
-              <a href="#" class="">Przeglądaj wg języka</a>
+              <a href="#" class="primary-nav-link">Przeglądaj wg języka</a>
             </li>
           </ul>
         </nav>
@@ -79,7 +81,7 @@
               </button>
             </div>
           </div>
-          <div class="secondary-nav-item">Dzieci</div>
+          <div class="secondary-nav-item"><a href="#">Dzieci</a></div>
           <div class="secondary-nav-item">
             <ion-icon
               class="notifications-icon"
@@ -223,8 +225,8 @@
             class="slider-arrow-left"
             name="chevron-back-outline"
           ></ion-icon>
-          <div class="category-slider-content ranking">
-            <div class="slider-item-ranking">
+          <div id="top10-poland" class="category-slider-content ranking">
+            <!-- <div class="slider-item-ranking">
               <span class="slider-number">1</span>
               <img src="" alt="Miniaturka filmu" class="slider-img" />
             </div>
@@ -262,9 +264,8 @@
             </div>
             <div class="slider-item-ranking">
               <span class="slider-number">10</span>
-
               <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
+            </div> -->
           </div>
           <div class="slider-stripes"></div>
           <ion-icon
@@ -288,7 +289,14 @@
               name="chevron-back-outline"
             ></ion-icon>
             <div class="category-slider-content">
-              <div class="slider-item red"></div>
+              <div class="slider-item">
+                <img
+                  src="src/images/netflix-watch-everywhere.png"
+                  alt=""
+                  class="slider-item-img"
+                />
+                <p class="slider-item-name">NAZWA</p>
+              </div>
               <div class="slider-item red"></div>
               <div class="slider-item red"></div>
               <div class="slider-item red"></div>
@@ -436,14 +444,14 @@
         </div>
 
         <div class="category-view">
-          <h2 class="category-heading">Top 10 seriali w&nbsp;Polsce dzisiaj</h2>
+          <h2 class="category-heading">Top 10 filmów na świecie dzisiaj</h2>
           <div class="category-slider">
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div class="category-slider-content ranking">
-              <div class="slider-item-ranking">
+            <div id="top10-world" class="category-slider-content ranking">
+              <!-- <div class="slider-item-ranking">
                 <span class="slider-number">1</span>
                 <img src="" alt="Miniaturka filmu" class="slider-img" />
               </div>
@@ -481,9 +489,8 @@
               </div>
               <div class="slider-item-ranking">
                 <span class="slider-number">10</span>
-
                 <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
+              </div> -->
             </div>
             <div class="slider-stripes"></div>
             <ion-icon

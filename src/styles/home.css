@@ -70,10 +70,11 @@ body {
   color: #a0a0a0;
 }
 
-.current-active {
+.primary-nav-item .current-active {
   font-weight: 600;
   color: #fff;
   cursor: default;
+  pointer-events: none;
 }
 
 .secondary-navigation {
@@ -472,6 +473,7 @@ body {
 }
 
 .slider-item {
+  position: relative;
   flex: 0 0 auto;
   height: 8.5vw;
   /* width: 16.66666667%; */
@@ -479,7 +481,25 @@ body {
   /* border: 0.1rem solid #fff;
   border-radius: var(--default-border-radius); */
   background-color: #000;
+  /* background: url(/src/images/netflix-watch-everywhere.png); */
+  background-size: cover;
+  border-radius: var(--default-border-radius);
   cursor: pointer;
+}
+
+.slider-item-img {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--default-border-radius);
+}
+
+.slider-item-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
 .red {
