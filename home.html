@@ -8,7 +8,10 @@
     <link rel="icon" href="src/images/fav-64x64.png" />
     <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="src/styles/home.css" />
+    <link rel="stylesheet" href="src/styles/home-main-view.css" />
+    <link rel="stylesheet" href="src/styles/home-header.css" />
+    <link rel="stylesheet" href="src/styles/home-categories.css" />
+    <link rel="stylesheet" href="src/styles/home-footer.css" />
 
     <script
       defer
@@ -35,36 +38,47 @@
               class="primary-nav-logo"
             />
           </a>
-          <ul class="primary-nav-items">
-            <li class="primary-nav-item">
-              <a href="#" class="primary-nav-link current-active"
-                >Strona główna</a
-              >
-            </li>
-            <li class="primary-nav-item">
-              <a href="#" class="primary-nav-link">Seriale i&nbsp;programy</a>
-            </li>
-            <li class="primary-nav-item">
-              <a href="#" class="primary-nav-link">Filmy</a>
-            </li>
-            <li class="primary-nav-item">
-              <a href="#" class="primary-nav-link">Nowe i&nbsp;popularne</a>
-            </li>
-            <li class="primary-nav-item">
-              <a href="#" class="primary-nav-link">Moja lista</a>
-            </li>
-            <li class="primary-nav-item">
-              <a href="#" class="primary-nav-link">Przeglądaj wg języka</a>
-            </li>
-          </ul>
+          <div class="primary-nav-container">
+            <span class="primary-nav-browse">Przeglądaj</span>
+            <ion-icon
+              class="primary-nav-arrow-down"
+              name="caret-down-outline"
+            ></ion-icon>
+
+            <ul class="primary-nav-items">
+              <ion-icon
+                class="primary-nav-arrow-up"
+                name="caret-up-outline"
+              ></ion-icon>
+              <li class="primary-nav-item">
+                <a href="#" class="primary-nav-link current-active"
+                  >Strona główna</a
+                >
+              </li>
+              <li class="primary-nav-item">
+                <a href="#" class="primary-nav-link">Seriale i&nbsp;programy</a>
+              </li>
+              <li class="primary-nav-item">
+                <a href="#" class="primary-nav-link">Filmy</a>
+              </li>
+              <li class="primary-nav-item">
+                <a href="#" class="primary-nav-link">Nowe i&nbsp;popularne</a>
+              </li>
+              <li class="primary-nav-item">
+                <a href="#" class="primary-nav-link">Moja lista</a>
+              </li>
+              <li class="primary-nav-item">
+                <a href="#" class="primary-nav-link">Przeglądaj wg języka</a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <nav class="secondary-navigation">
-          <div class="secondary-nav-item">
+          <div class="secondary-nav-item" id="secondary-nav-item-search">
             <button class="search-btn">
               <ion-icon class="search-icon" name="search-outline"></ion-icon>
             </button>
-
             <div class="search-container hidden">
               <button class="search-btn-absolute">
                 <ion-icon class="search-icon" name="search-outline"></ion-icon>
@@ -81,8 +95,10 @@
               </button>
             </div>
           </div>
-          <div class="secondary-nav-item"><a href="#">Dzieci</a></div>
-          <div class="secondary-nav-item">
+          <div class="secondary-nav-item" id="secondary-nav-item-kids">
+            <a href="#">Dzieci</a>
+          </div>
+          <div class="secondary-nav-item" id="secondary-nav-item-notifications">
             <ion-icon
               class="notifications-icon"
               name="notifications-outline"
@@ -95,7 +111,7 @@
               <span class="notifications-text">Brak nowych powiadomień</span>
             </div>
           </div>
-          <div class="secondary-nav-item">
+          <div class="secondary-nav-item" id="secondary-nav-item-profile">
             <div class="profile-logo"></div>
             <ion-icon
               class="profile-arrow-down"
@@ -188,7 +204,7 @@
         </nav>
       </header>
 
-      <div class="movie-info-container">
+      <section class="movie-info-container">
         <img
           src="src/images/heading-home.webp"
           alt="Serial Ultraman"
@@ -215,63 +231,24 @@
             <span>Więcej informacji</span>
           </button>
         </div>
-      </div>
+      </section>
 
       <span class="category-background"></span>
       <div class="category-view-absolute">
         <h2 class="category-heading">Top 10 filmów w&nbsp;Polsce dzisiaj</h2>
         <div class="category-slider">
+          <span class="slider-dimmed-left"></span>
           <ion-icon
             class="slider-arrow-left"
             name="chevron-back-outline"
           ></ion-icon>
-          <div id="top10-poland" class="category-slider-content ranking">
-            <!-- <div class="slider-item-ranking">
-              <span class="slider-number">1</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">2</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">3</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number fixed-stroke">4</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">5</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">6</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">7</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">8</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">9</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div>
-            <div class="slider-item-ranking">
-              <span class="slider-number">10</span>
-              <img src="" alt="Miniaturka filmu" class="slider-img" />
-            </div> -->
-          </div>
+          <div id="top10-movies" class="category-slider-content ranking"></div>
           <div class="slider-stripes"></div>
           <ion-icon
             class="slider-arrow-right"
             name="chevron-forward-outline"
           ></ion-icon>
+          <span class="slider-dimmed-right"></span>
         </div>
       </div>
     </section>
@@ -279,372 +256,152 @@
     <main>
       <section class="category-section">
         <div class="category-view">
-          <h2 class="category-heading">
-            Wciągające trzymające w&nbsp;napięciu seriale i&nbsp;programy
-            amerykańskie
-          </h2>
+          <h2 class="category-heading">Nowości</h2>
           <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div class="category-slider-content">
-              <div class="slider-item">
-                <img
-                  src="src/images/netflix-watch-everywhere.png"
-                  alt=""
-                  class="slider-item-img"
-                />
-                <p class="slider-item-name">NAZWA</p>
-              </div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-            </div>
-            <div class="slider-stripes">
-              <!-- <span class="slider-dot filled"></span>
-              <span class="slider-dot"></span>
-              <span class="slider-dot"></span>
-              <span class="slider-dot"></span>
-              <span class="slider-dot"></span> -->
-            </div>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
-          </div>
-        </div>
-
-        <div class="category-view">
-          <h2 class="category-heading">Oglądaj dalej: Ola</h2>
-          <div class="category-slider">
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div class="category-slider-content">
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-            </div>
+            <div id="new-on-netflix" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
+            <span class="slider-dimmed-right"></span>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Najwyżej oceniane seriale</h2>
+          <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div
+              id="highest-rated-series"
+              class="category-slider-content"
+            ></div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Popularne teraz</h2>
           <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div class="category-slider-content">
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-            </div>
+            <div id="popular" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
+            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
-          <h2 class="category-heading">Top 10 filmów na świecie dzisiaj</h2>
+          <h2 class="category-heading">Top 10 seriali w Polsce dzisiaj</h2>
           <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div id="top10-world" class="category-slider-content ranking">
-              <!-- <div class="slider-item-ranking">
-                <span class="slider-number">1</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">2</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">3</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number fixed-stroke">4</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">5</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">6</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">7</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">8</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">9</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div>
-              <div class="slider-item-ranking">
-                <span class="slider-number">10</span>
-                <img src="" alt="Miniaturka filmu" class="slider-img" />
-              </div> -->
-            </div>
+            <div
+              id="top10-series"
+              class="category-slider-content ranking"
+            ></div>
             <div class="slider-stripes"></div>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
+            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
-          <h2 class="category-heading">Popularne teraz</h2>
+          <h2 class="category-heading">Nadchodzące</h2>
           <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div class="category-slider-content">
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-            </div>
+            <div id="upcoming" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
+            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
-          <h2 class="category-heading">Popularne teraz</h2>
+          <h2 class="category-heading">Ulubione seriale</h2>
           <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div class="category-slider-content">
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-            </div>
+            <div id="favourites" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
+            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
-          <h2 class="category-heading">Popularne teraz</h2>
+          <h2 class="category-heading">Seriale</h2>
           <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
-            <div class="category-slider-content">
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item red"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-              <div class="slider-item blue"></div>
-            </div>
+            <div id="series" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
+            <span class="slider-dimmed-right"></span>
+          </div>
+        </div>
+
+        <div class="category-view">
+          <h2 class="category-heading">Filmy</h2>
+          <div class="category-slider">
+            <span class="slider-dimmed-left"></span>
+            <ion-icon
+              class="slider-arrow-left"
+              name="chevron-back-outline"
+            ></ion-icon>
+            <div id="movies" class="category-slider-content"></div>
+            <div class="slider-stripes"></div>
+            <ion-icon
+              class="slider-arrow-right"
+              name="chevron-forward-outline"
+            ></ion-icon>
+            <span class="slider-dimmed-right"></span>
           </div>
         </div>
       </section>

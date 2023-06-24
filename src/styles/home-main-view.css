@@ -1,0 +1,117 @@
+@import '/src/styles/general.css';
+@import '/src/styles/variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
+
+body {
+  background-color: #141414;
+  color: #fff;
+}
+
+/***************************/
+/* MAIN VIEw  */
+/***************************/
+
+.main-view {
+  background-image: url(/src/images/background-home.webp);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 56.25vw;
+  width: 100%;
+  margin-bottom: 3.5vw;
+}
+
+.main-view::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(77deg, rgba(0, 0, 0, 0.6), transparent 85%);
+}
+
+.movie-info-container {
+  position: absolute;
+  left: 4%;
+  top: 15%;
+  width: 36vw;
+}
+
+.main-img {
+  width: 100%;
+  margin-bottom: 1.8vw;
+}
+
+.main-heading {
+  font-size: 1.5vw;
+  margin-bottom: 1.6vw;
+}
+
+.main-text {
+  font-size: 1.1vw;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 1.8vw;
+}
+
+.btns-container {
+  display: flex;
+  gap: 0.8vw;
+}
+
+.btn-play-link {
+}
+
+.btn-play,
+.btn-more-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  padding: 0.4vw 1.7vw 0.4vw 1.4vw;
+  font-size: 1.15vw;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: var(--default-border-radius);
+}
+
+.btn-play {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-play:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.btn-more-info {
+  color: #fff;
+  background-color: rgba(109, 109, 110, 0.7);
+}
+
+.btn-more-info:hover {
+  background-color: rgba(109, 109, 110, 0.4);
+}
+
+.btn-play-icon,
+.btn-more-info-icon {
+  font-size: 2.1vw;
+}
+
+/***************************/
+/* MAIN VIEW RESPONSIVE  */
+/***************************/
+
+/* 1200px */
+@media (max-width: 75em) {
+  .movie-info-container {
+    width: 40vw;
+  }
+
+  .main-heading {
+    font-size: 2vw;
+  }
+
+  .main-text {
+    font-size: 1.4vw;
+  }
+}
