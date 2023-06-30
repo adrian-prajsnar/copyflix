@@ -354,6 +354,16 @@
   }
 }
 
+@media (max-width: 62.5em) {
+  .header {
+    height: 4.8rem;
+    background-color: #141414;
+
+    /* Main-view is hidden at this state (1000px) so header has to be visible */
+    visibility: visible;
+  }
+}
+
 /* 800px */
 @media (max-width: 50em) {
   .secondary-nav-item.search {
@@ -365,10 +375,6 @@
 
 /* 550px */
 @media (max-width: 34.375em) {
-  .header {
-    height: 4.8rem;
-  }
-
   .primary-navigation,
   .secondary-navigation {
     gap: 1.6rem;

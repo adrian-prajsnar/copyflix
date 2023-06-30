@@ -29,6 +29,7 @@
   </head>
   <body>
     <section class="main-view">
+      <div class="main-view-dimmed-background-left"></div>
       <header class="header">
         <nav class="primary-navigation">
           <a href="#" class="primary-nav-logo-link">
@@ -98,7 +99,11 @@
           <div class="secondary-nav-item" id="secondary-nav-item-kids">
             <a href="#">Dzieci</a>
           </div>
-          <div class="secondary-nav-item" id="secondary-nav-item-notifications">
+          <div
+            class="secondary-nav-item"
+            id="secondary-nav-item-notifications"
+            tabindex="0"
+          >
             <ion-icon
               class="notifications-icon"
               name="notifications-outline"
@@ -111,7 +116,11 @@
               <span class="notifications-text">Brak nowych powiadomień</span>
             </div>
           </div>
-          <div class="secondary-nav-item" id="secondary-nav-item-profile">
+          <div
+            class="secondary-nav-item"
+            id="secondary-nav-item-profile"
+            tabindex="0"
+          >
             <div class="profile-logo"></div>
             <ion-icon
               class="profile-arrow-down"
@@ -206,19 +215,18 @@
 
       <section class="movie-info-container">
         <img
-          src="src/images/heading-home.webp"
-          alt="Serial Ultraman"
+          src="src/images/heading-home2.webp"
+          alt="Serial Breaking Bad"
           class="main-img"
         />
-        <h1 class="main-heading">Obejrzyj teraz sezon 3</h1>
         <p class="main-text">
-          Lata temu superbohater zstąpił z nieba i zaprowadził pokój na świecie.
-          Dziś syn Ultramana musi zająć jego miejsce, by chronić Ziemię przed
-          nowym zagrożeniem z kosmosu.
+          Umierający na raka nauczyciel chemii łączy siły z byłym uczniem, aby
+          zabezpieczyć finansowo swoją rodzinę. Wspólnie zaczynają produkować i
+          sprzedawać metamfetaminę.
         </p>
         <div class="btns-container">
           <a class="btn-play-link" href="#">
-            <button class="btn-play">
+            <button class="btn-play" tabindex="-1">
               <ion-icon class="btn-play-icon" name="play"></ion-icon>
               <span>Odtwórz</span>
             </button>
@@ -233,22 +241,22 @@
         </div>
       </section>
 
-      <span class="category-background"></span>
+      <div class="category-background"></div>
       <div class="category-view-absolute">
         <h2 class="category-heading">Top 10 filmów w&nbsp;Polsce dzisiaj</h2>
         <div class="category-slider">
-          <span class="slider-dimmed-left"></span>
+          <span class="slider-dimmed-left" tabindex="0"></span>
           <ion-icon
             class="slider-arrow-left"
             name="chevron-back-outline"
           ></ion-icon>
           <div id="top10-movies" class="category-slider-content ranking"></div>
           <div class="slider-stripes"></div>
+          <span class="slider-dimmed-right" tabindex="0"></span>
           <ion-icon
             class="slider-arrow-right"
             name="chevron-forward-outline"
           ></ion-icon>
-          <span class="slider-dimmed-right"></span>
         </div>
       </div>
     </section>
@@ -258,25 +266,25 @@
         <div class="category-view">
           <h2 class="category-heading">Nowości</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
             <div id="new-on-netflix" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Najwyżej oceniane seriale</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
@@ -286,36 +294,36 @@
               class="category-slider-content"
             ></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Popularne teraz</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
             <div id="popular" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Top 10 seriali w Polsce dzisiaj</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
@@ -325,83 +333,83 @@
               class="category-slider-content ranking"
             ></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Nadchodzące</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
             <div id="upcoming" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Ulubione seriale</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
             <div id="favourites" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Seriale</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
             <div id="series" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
 
         <div class="category-view">
           <h2 class="category-heading">Filmy</h2>
           <div class="category-slider">
-            <span class="slider-dimmed-left"></span>
+            <span class="slider-dimmed-left" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-left"
               name="chevron-back-outline"
             ></ion-icon>
             <div id="movies" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
+            <span class="slider-dimmed-right" tabindex="0"></span>
             <ion-icon
               class="slider-arrow-right"
               name="chevron-forward-outline"
             ></ion-icon>
-            <span class="slider-dimmed-right"></span>
           </div>
         </div>
       </section>

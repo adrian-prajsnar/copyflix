@@ -17,7 +17,6 @@ const primaryNavLink = document.querySelectorAll('.primary-nav-link');
 primaryNavItems.addEventListener('click', e => {
   const click = e.target;
   if (!click.classList.contains('primary-nav-link')) return;
-
   if (click.classList.contains('current-active')) return;
   else {
     primaryNavLink.forEach(link => link.classList.remove('current-active'));
@@ -27,6 +26,14 @@ primaryNavItems.addEventListener('click', e => {
 
 // PRIMARY NAV - MENU BAR ACTIVATION
 const primaryNavContainer = document.querySelector('.primary-nav-container');
+
+function setTabIndexPrimaryNav() {
+  window.innerWidth <= 1200
+    ? (primaryNavContainer.tabIndex = '0')
+    : (primaryNavContainer.tabIndex = '-1');
+}
+window.addEventListener('resize', setTabIndexPrimaryNav);
+
 let navItemsTimeout;
 
 function closePrimaryNavItems() {
@@ -87,7 +94,7 @@ searchInput.addEventListener('input', e => {
     : searchInput.classList.remove('has-value');
 });
 
-searchClose.addEventListener('mousedown', e => {
+searchClose.addEventListener('mouseup', e => {
   e.preventDefault();
   searchInput.value = '';
   searchInput.focus();
@@ -150,17 +157,53 @@ function runSlider() {
   const slider = document.querySelectorAll('.category-slider');
 
   slider.forEach(slider => {
-    const btnLeft = slider.children[1];
-    const btnRight = slider.children[4];
+    const width = window.innerWidth;
+    let slidesCounter;
+    let slidesPerPage;
+    let currentTranslateX = 0;
+
+    if (width > 1400) slidesPerPage = 6;
+    if (width <= 1400) slidesPerPage = 5;
+    if (width <= 1200) slidesPerPage = 4;
+    if (width <= 1000) slidesPerPage = 3;
+    if (width <= 700) slidesPerPage = 2;
+
+    slidesCounter = slidesPerPage;
+
+    const dimmedLeft = slider.children[0];
+    const dimmedRight = slider.children[4];
+    const arrowLeft = slider.children[1];
+    const arrowRight = slider.children[5];
     const sliderContent = slider.children[2];
     const slides = sliderContent.children;
     const sliderStripes = slider.children[3];
     const sliderStripe = sliderStripes.children;
-    const maxSlides = slides.length;
-    const pages = Math.ceil(maxSlides / 6);
-    const maxWidth = (pages - 1) * 100;
-    let curWidth = 0;
-    let curSlides = 6;
+    const slidesLoaded = slides.length;
+    const pages = Math.ceil(slidesLoaded / slidesPerPage);
+    const maxTranslateX = (pages - 1) * 100;
+    const maxSlides = pages * slidesPerPage;
+
+    // Set the slider to beginning
+    sliderContent.style.transform = 'translateX(0%)';
+
+    // Remove existing stripes
+    while (sliderStripes.firstChild)
+      sliderStripes.removeChild(sliderStripes.firstChild);
+
+    const slidesArray = Array.from(slides);
+
+    slidesArray.forEach((slide, index) => {
+      if (index + 1 <= slidesPerPage) slide.tabIndex = '0';
+      else slide.tabIndex = '-1';
+    });
+
+    function updateAccesibility() {
+      slidesArray.forEach(slide => {
+        slide.classList.remove('enabled');
+        if (slide.tabIndex === 0) slide.classList.add('enabled');
+      });
+    }
+    updateAccesibility();
 
     function createStripes() {
       sliderStripes.insertAdjacentHTML(
@@ -172,37 +215,70 @@ function runSlider() {
     for (let i = 0; i < pages; i++) {
       createStripes();
     }
-
     sliderStripe[0]?.classList.add('active');
 
     function moveRight() {
-      if (curSlides >= maxSlides) {
+      if (slidesCounter >= slidesLoaded) {
         sliderContent.style.transform = `translateX(0%)`;
-        curWidth = 0;
-        curSlides = 6;
+        currentTranslateX = 0;
+        slidesCounter = slidesPerPage;
+        slidesArray.forEach((slide, index) => {
+          if (index + 1 <= slidesPerPage) slide.tabIndex = '0';
+          else slide.tabIndex = '-1';
+        });
       } else {
-        sliderContent.style.transform = `translateX(${curWidth - 100}%)`;
-        curWidth = curWidth - 100;
-        curSlides = curSlides + 6;
+        sliderContent.style.transform = `translateX(${
+          currentTranslateX - 100
+        }%)`;
+        currentTranslateX = currentTranslateX - 100;
+        slidesCounter = slidesCounter + slidesPerPage;
+        slidesArray.forEach((slide, index) => {
+          if (
+            index + 1 > slidesCounter - slidesPerPage &&
+            index + 1 <= slidesCounter
+          )
+            slide.tabIndex = '0';
+          else slide.tabIndex = '-1';
+        });
       }
-      updateSliderDot();
+      updateSliderStripe();
+      updateAccesibility();
     }
 
     function moveLeft() {
-      if (curSlides <= 6) {
-        sliderContent.style.transform = `translateX(${-maxWidth}%)`;
-        curWidth = -maxWidth;
-        curSlides = maxSlides;
+      if (slidesCounter <= slidesPerPage) {
+        sliderContent.style.transform = `translateX(${-maxTranslateX}%)`;
+        currentTranslateX = -maxTranslateX;
+        slidesCounter = maxSlides;
+        slidesArray.forEach((slide, index) => {
+          if (
+            index + 1 <= slidesLoaded &&
+            index + 1 > (pages - 1) * slidesPerPage
+          )
+            slide.tabIndex = '0';
+          else slide.tabIndex = '-1';
+        });
       } else {
-        sliderContent.style.transform = `translateX(${curWidth + 100}%)`;
-        curWidth = curWidth + 100;
-        curSlides = curSlides - 6;
+        sliderContent.style.transform = `translateX(${
+          currentTranslateX + 100
+        }%)`;
+        currentTranslateX = currentTranslateX + 100;
+        slidesCounter = slidesCounter - slidesPerPage;
+        slidesArray.forEach((slide, index) => {
+          if (
+            index + 1 > slidesCounter - slidesPerPage &&
+            index + 1 <= slidesCounter
+          )
+            slide.tabIndex = '0';
+          else slide.tabIndex = '-1';
+        });
       }
-      updateSliderDot();
+      updateSliderStripe();
+      updateAccesibility();
     }
 
-    function updateSliderDot() {
-      const activePageIndex = Math.ceil(curSlides / 6) - 1;
+    function updateSliderStripe() {
+      const activePageIndex = Math.ceil(slidesCounter / slidesPerPage) - 1;
       const stripes = Array.from(sliderStripe);
       stripes.forEach((stripe, index) => {
         if (index === activePageIndex) stripe.classList.add('active');
@@ -210,8 +286,16 @@ function runSlider() {
       });
     }
 
-    btnLeft.addEventListener('click', moveLeft);
-    btnRight.addEventListener('click', moveRight);
+    arrowLeft.addEventListener('click', moveLeft);
+    arrowRight.addEventListener('click', moveRight);
+
+    dimmedLeft.addEventListener('keydown', e => {
+      if (e.key === 'Enter') moveLeft();
+    });
+
+    dimmedRight.addEventListener('keydown', e => {
+      if (e.key === 'Enter') moveRight();
+    });
   });
 }
 
@@ -411,6 +495,7 @@ async function getSlidersData() {
 getSlidersData().then(() => {
   runSlider();
   runSliderPopUp();
+  window.addEventListener('resize', runSlider);
 });
 
 function runSliderPopUp() {
@@ -420,60 +505,98 @@ function runSliderPopUp() {
   const sliderItem = document.querySelectorAll('.slider-item');
   const sliderItemRank = document.querySelectorAll('.slider-item-ranking');
   const sliderItems = [...sliderItem, ...sliderItemRank];
-  const width = Math.round(window.innerWidth / 4.5);
-  const height = Math.round(window.innerWidth / 4.1);
   const categorySlider = document.querySelector('.category-slider');
   const sliderPadding = window.getComputedStyle(categorySlider).paddingRight;
-  let sliderPaddingNum = +sliderPadding.slice(0, -2);
+  let sliderPaddingNum = Math.round(sliderPadding.slice(0, -2));
+  let popUpWidth;
+
+  const width = window.innerWidth;
+  if (width > 1400) popUpWidth = Math.round(window.innerWidth / 4.5);
+  if (width <= 1400) popUpWidth = Math.round(window.innerWidth / 3.9);
+  if (width <= 1200) popUpWidth = Math.round(window.innerWidth / 3.3);
+  if (width <= 1000) popUpWidth = Math.round(window.innerWidth / 2.3);
+  if (width <= 700) popUpWidth = Math.round(window.innerWidth / 1.8);
+  if (width <= 550) popUpWidth = Math.round(window.innerWidth / 1.6);
+  if (width <= 420) popUpWidth = Math.round(window.innerWidth / 1.4);
 
   window.addEventListener('resize', () => {
     const sliderPadding = window.getComputedStyle(categorySlider).paddingRight;
-    sliderPaddingNum = +sliderPadding.slice(0, -2);
+    sliderPaddingNum = Math.round(sliderPadding.slice(0, -2));
   });
 
   sliderItems.forEach(slider => {
     const currentCategory = slider.parentElement.parentElement.parentElement;
     const sliderPopUp = slider.firstElementChild;
-    sliderPopUp.style.width = `${width}px`;
-    sliderPopUp.style.height = `${height}px`;
+    sliderPopUp.style.width = `${popUpWidth}px`;
 
     window.addEventListener('resize', () => {
-      const width = Math.round(window.innerWidth / 4.5);
-      const height = Math.round(window.innerWidth / 4.1);
-      sliderPopUp.style.width = `${width}px`;
-      sliderPopUp.style.height = `${height}px`;
+      let popUpWidth;
+      const width = window.innerWidth;
+      if (width > 1400) popUpWidth = Math.round(window.innerWidth / 4.5);
+      if (width <= 1400) popUpWidth = Math.round(window.innerWidth / 3.9);
+      if (width <= 1200) popUpWidth = Math.round(window.innerWidth / 3.3);
+      if (width <= 1000) popUpWidth = Math.round(window.innerWidth / 2.3);
+      if (width <= 700) popUpWidth = Math.round(window.innerWidth / 1.8);
+      if (width <= 550) popUpWidth = Math.round(window.innerWidth / 1.6);
+      if (width <= 420) popUpWidth = Math.round(window.innerWidth / 1.4);
+
+      sliderPopUp.style.width = `${popUpWidth}px`;
     });
 
     let sliderTimeout;
 
-    slider.addEventListener('mouseenter', () => {
+    function openPopUp() {
       sliderTimeout = setTimeout(() => {
+        const width = window.innerWidth;
+        const rect = slider.getBoundingClientRect();
+        const distanceFromLeft = Math.round(rect.left);
+
+        if (rect.right / sliderPaddingNum > 23)
+          sliderPopUp.classList.add('right');
+
+        if (
+          distanceFromLeft === sliderPaddingNum ||
+          distanceFromLeft - 1 === sliderPaddingNum ||
+          distanceFromLeft + 1 === sliderPaddingNum
+        )
+          sliderPopUp.classList.add('left');
+
+        if (
+          width <= 1000 &&
+          currentCategory.classList.contains('category-view-absolute')
+        )
+          sliderPopUp.classList.add('top');
+
         currentCategory.classList.add('enabled');
-
-        const rect = sliderPopUp.getBoundingClientRect();
-        if (window.innerWidth - rect.right < sliderPaddingNum) {
-          sliderPopUp.style.left = '25%';
-          sliderPopUp.style.transform = 'translate(-50%, -50%)';
-        }
-        if (rect.left < sliderPaddingNum) {
-          sliderPopUp.style.left = '0';
-          sliderPopUp.style.transform = 'translate(0, -50%)';
-        }
-
         sliderPopUp.classList.remove('hidden-2');
         sliderArrowLeft.forEach(arr => arr.classList.add('hidden-2'));
         sliderArrowRight.forEach(arr => arr.classList.add('hidden-2'));
         sliderStripes.forEach(str => str.classList.add('hidden-2'));
       }, 500);
-    });
+    }
 
-    slider.addEventListener('mouseleave', () => {
-      currentCategory.classList.remove('enabled');
+    function closePopUp() {
+      setTimeout(() => {
+        sliderPopUp.classList.remove('right');
+        sliderPopUp.classList.remove('left');
+        sliderPopUp.classList.remove('top');
+        currentCategory.classList.remove('enabled');
+      }, 200);
       sliderPopUp.classList.add('hidden-2');
       sliderArrowLeft.forEach(arr => arr.classList.remove('hidden-2'));
       sliderArrowRight.forEach(arr => arr.classList.remove('hidden-2'));
       sliderStripes.forEach(str => str.classList.remove('hidden-2'));
       clearTimeout(sliderTimeout);
-    });
+    }
+
+    slider.addEventListener('mouseenter', openPopUp);
+    slider.addEventListener('mouseleave', closePopUp);
   });
 }
+
+// FOOTER SERVICE-CODE
+const serviceCode = document.querySelector('.footer-service-code');
+const dedicatedServiceCode = '997-666';
+serviceCode.addEventListener('click', () => {
+  serviceCode.textContent = dedicatedServiceCode;
+});

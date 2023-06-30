@@ -12,27 +12,28 @@ body {
 /***************************/
 
 .main-view {
-  background-image: url(/src/images/background-home.webp);
+  background-image: url(/src/images/background-home2.webp);
   background-size: cover;
   background-position: center;
   position: relative;
   height: 56.25vw;
   width: 100%;
-  margin-bottom: 3.5vw;
+  margin-bottom: 2.5vw;
 }
 
-.main-view::after {
-  content: '';
+.main-view-dimmed-background-left {
   position: absolute;
-  z-index: -1;
-  inset: 0;
+  top: 0;
+  right: 26.09%;
+  bottom: 0;
+  left: 0;
   background: linear-gradient(77deg, rgba(0, 0, 0, 0.6), transparent 85%);
 }
 
 .movie-info-container {
   position: absolute;
   left: 4%;
-  top: 15%;
+  top: 17.5%;
   width: 36vw;
 }
 
@@ -41,16 +42,12 @@ body {
   margin-bottom: 1.8vw;
 }
 
-.main-heading {
-  font-size: 1.5vw;
-  margin-bottom: 1.6vw;
-}
-
 .main-text {
   font-size: 1.1vw;
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: 1.8vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 }
 
 .btns-container {
@@ -89,7 +86,7 @@ body {
 }
 
 .btn-more-info:hover {
-  background-color: rgba(109, 109, 110, 0.4);
+  background-color: rgba(109, 109, 110, 0.5);
 }
 
 .btn-play-icon,
@@ -101,17 +98,49 @@ body {
 /* MAIN VIEW RESPONSIVE  */
 /***************************/
 
+/* 1400px */
+@media (max-width: 87.5em) {
+  .main-view {
+    margin-bottom: 5vw;
+  }
+}
+
 /* 1200px */
 @media (max-width: 75em) {
-  .movie-info-container {
-    width: 40vw;
+  .main-view {
+    margin-bottom: 8.5vw;
   }
 
-  .main-heading {
-    font-size: 2vw;
+  .movie-info-container {
+    width: 45vw;
+  }
+
+  .main-img {
+    width: 70%;
   }
 
   .main-text {
-    font-size: 1.4vw;
+    font-size: 1.3vw;
+  }
+
+  .btn-play,
+  .btn-more-info {
+    gap: 0.8vw;
+    padding: 0.7vw 2vw 0.7vw 1.7vw;
+    font-size: 1.5vw;
+  }
+
+  .btn-play-icon,
+  .btn-more-info-icon {
+    font-size: 2.3vw;
+  }
+}
+
+/* 1000px */
+@media (max-width: 62.5em) {
+  .main-view {
+    visibility: hidden;
+    height: auto;
+    margin-bottom: 5vw;
   }
 }
