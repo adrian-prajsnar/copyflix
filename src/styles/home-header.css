@@ -199,9 +199,8 @@
 
 .profile-logo {
   position: relative;
-  height: 3rem;
-  width: 3rem;
-  background-color: red;
+  height: 3.2rem;
+  width: 3.2rem;
   border-radius: var(--default-border-radius);
 }
 
@@ -239,14 +238,14 @@
 .profiles-list {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
   padding: 1.8rem 1.2rem 1.2rem;
 }
 
 .profiles-managment-list {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.4rem;
   padding: 0 1.2rem 1.2rem;
 }
 
@@ -262,11 +261,11 @@
   width: fit-content;
 }
 
-.profile-link:hover .profile-name {
+.profile-link:hover .profile-item {
   border-bottom: 0.1rem solid currentColor;
 }
 
-.profile-name {
+.profile-item {
   border-bottom: 0.1rem solid transparent;
 }
 
@@ -285,7 +284,7 @@
 
 .profile-logout {
   text-align: center;
-  padding-top: 1.8rem;
+  padding-top: 1.3rem;
   border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
 }
 

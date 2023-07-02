@@ -152,6 +152,47 @@ profileNav.addEventListener('mouseleave', () => {
   profileTimeout = setTimeout(() => closeProfileNav(), 300);
 });
 
+// SECONDARY NAV - ADDING PROFILE NAMES
+const savedNames = sessionStorage.getItem('profileSelected');
+const namesArray = savedNames.split(',');
+const currentProfile = namesArray[0];
+const otherProfiles = namesArray.splice(1);
+const profileLogos = document.querySelectorAll('.profile-logo');
+const profileNames = document.querySelectorAll('.profile-name');
+
+function addProfileNames() {
+  profileNames.forEach((name, index) => {
+    name.textContent = otherProfiles[index];
+  });
+}
+
+function setUpCurrentProfile() {
+  profileLogos[0].src = `src/images/profiles-${currentProfile.toLowerCase()}.png`;
+  profileLogos[0].alt = `Awatar użytkownika ${currentProfile}`;
+}
+
+function setUpOtherProfiles() {
+  profileLogos.forEach((profile, index) => {
+    if (index === 0) return;
+    else {
+      profile.src = `src/images/profiles-${otherProfiles[
+        index - 1
+      ].toLowerCase()}.png`;
+      profile.alt = `Awatar użytkownika ${otherProfiles[index]}`;
+    }
+  });
+}
+addProfileNames();
+setUpCurrentProfile();
+setUpOtherProfiles();
+
+// SECONDARY NAV - LOGOUT
+const btnLogout = document.querySelector('.profile-logout-link');
+btnLogout.addEventListener('click', () => {
+  sessionStorage.removeItem('isLoggedIn');
+  sessionStorage.removeItem('profileSelected');
+});
+
 // SLIDER FUNCTIONALITY
 function runSlider() {
   const slider = document.querySelectorAll('.category-slider');
@@ -550,6 +591,9 @@ function runSliderPopUp() {
         const width = window.innerWidth;
         const rect = slider.getBoundingClientRect();
         const distanceFromLeft = Math.round(rect.left);
+
+        console.log(sliderPaddingNum);
+        console.log(distanceFromLeft);
 
         if (rect.right / sliderPaddingNum > 23)
           sliderPopUp.classList.add('right');
