@@ -6,6 +6,7 @@ const passwordInput = document.querySelector('#password-input');
 const errorMsgEmail = document.querySelector('.error-msg-email');
 const errorMsgPassword = document.querySelector('.error-msg-password');
 const noAccInfo = document.querySelector('.no-account-info');
+const rememberData = document.querySelector('.remember-checkbox');
 
 const correctAccounts = [
   { login: 'john.roller@example.com', password: '1234' },
@@ -22,7 +23,8 @@ form.addEventListener('submit', e => {
         acc.login === emailInput.value && acc.password === passwordInput.value
     )
   ) {
-    sessionStorage.setItem('isLoggedIn', true);
+    if (rememberData.checked) localStorage.setItem('isLoggedIn', true);
+    else sessionStorage.setItem('isLoggedIn', true);
     window.location.href = 'browse.html';
   } else {
     const digitsOnly = /^\d+$/.test(emailInput.value);
@@ -142,7 +144,8 @@ btnCaptcha.addEventListener('click', () => {
 });
 
 // SESSION/LOCAL STORAGE
-if (sessionStorage.getItem('isLoggedIn')) window.location.href = 'browse.html';
+if (localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn'))
+  window.location.href = 'browse.html';
 
 if (sessionStorage.getItem('profileSelected'))
   window.location.href = 'home.html';

@@ -265,6 +265,10 @@
   right: 4%;
 }
 
+.slider-stripes.mobile-view {
+  display: flex;
+}
+
 .slider-stripe {
   display: inline-block;
   width: 1.2rem;
@@ -285,6 +289,11 @@
   left: 0.5vw;
   cursor: pointer;
   z-index: 2;
+}
+
+.slider-arrow-left.mobile-view,
+.slider-arrow-right.mobile-view {
+  display: block;
 }
 
 .slider-arrow-right {

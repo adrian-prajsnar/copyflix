@@ -1,11 +1,3 @@
-// BTN LOGIN FUNCTIONALITY
-const btnLogin = document.querySelector('.btn-login');
-btnLogin.addEventListener('click', () => {
-  !sessionStorage.getItem('isLoggedIn')
-    ? (window.location.href = 'login.html')
-    : (window.location.href = 'browse.html');
-});
-
 // CTA Form
 const ctaForm = document.querySelectorAll('.cta-form');
 const input = document.querySelectorAll('.cta-input');
@@ -250,7 +242,8 @@ if (!sessionStorage.getItem('isFirstTimeLoaded')) {
   sessionStorage.setItem('isFirstTimeLoaded', true);
 }
 
-if (sessionStorage.getItem('isLoggedIn')) window.location.href = 'browse.html';
+if (localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn'))
+  window.location.href = 'browse.html';
 
 if (sessionStorage.getItem('profileSelected'))
   window.location.href = 'home.html';

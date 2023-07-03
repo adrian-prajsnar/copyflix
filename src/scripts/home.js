@@ -1,3 +1,29 @@
+// USER AGENT (MOBILE APP)
+const userAgent = navigator.userAgent;
+const mobileBrowser =
+  /Mobi/.test(userAgent) ||
+  /Android/.test(userAgent) ||
+  /webOS/.test(userAgent) ||
+  /iPhone/.test(userAgent) ||
+  /iPad/.test(userAgent) ||
+  /iPod/.test(userAgent) ||
+  /BlackBerry/.test(userAgent) ||
+  /Windows Phone/.test(userAgent);
+
+const sliderArrowLeft = document.querySelectorAll('.slider-arrow-left');
+const sliderArrowRight = document.querySelectorAll('.slider-arrow-right');
+const sliderStripes = document.querySelectorAll('.slider-stripes');
+
+if (mobileBrowser) {
+  sliderArrowLeft.forEach(arr => arr.classList.add('mobile-view'));
+  sliderArrowRight.forEach(arr => arr.classList.add('mobile-view'));
+  sliderStripes.forEach(str => str.classList.add('mobile-view'));
+} else {
+  sliderArrowLeft.forEach(arr => arr.classList.remove('mobile-view'));
+  sliderArrowRight.forEach(arr => arr.classList.remove('mobile-view'));
+  sliderStripes.forEach(str => str.classList.remove('mobile-view'));
+}
+
 // STICKY NAVIGATION
 const header = document.querySelector('.header');
 
@@ -154,9 +180,9 @@ profileNav.addEventListener('mouseleave', () => {
 
 // SECONDARY NAV - ADDING PROFILE NAMES
 const savedNames = sessionStorage.getItem('profileSelected');
-const namesArray = savedNames.split(',');
-const currentProfile = namesArray[0];
-const otherProfiles = namesArray.splice(1);
+const namesArray = savedNames?.split(',');
+const currentProfile = namesArray?.[0];
+const otherProfiles = namesArray?.splice(1);
 const profileLogos = document.querySelectorAll('.profile-logo');
 const profileNames = document.querySelectorAll('.profile-name');
 
@@ -182,14 +208,18 @@ function setUpOtherProfiles() {
     }
   });
 }
-addProfileNames();
-setUpCurrentProfile();
-setUpOtherProfiles();
+
+if (savedNames) {
+  addProfileNames();
+  setUpCurrentProfile();
+  setUpOtherProfiles();
+}
 
 // SECONDARY NAV - LOGOUT
 const btnLogout = document.querySelector('.profile-logout-link');
 btnLogout.addEventListener('click', () => {
   sessionStorage.removeItem('isLoggedIn');
+  localStorage.removeItem('isLoggedIn');
   sessionStorage.removeItem('profileSelected');
 });
 
@@ -341,7 +371,11 @@ function runSlider() {
 }
 
 // SESSION/LOCAL STORAGE
-if (!sessionStorage.getItem('isLoggedIn')) window.location.href = 'login.html';
+if (
+  !localStorage.getItem('isLoggedIn') &&
+  !sessionStorage.getItem('isLoggedIn')
+)
+  window.location.href = 'login.html';
 
 // GET MOVIES - API CALL
 const API_KEY = '0dd7b24bac1f9ee9f5384ca0ffa09559';
@@ -534,9 +568,13 @@ async function getSlidersData() {
 }
 
 getSlidersData().then(() => {
+  let previousWidth = window.innerWidth;
+  window.addEventListener('resize', () => {
+    if (window.innerWidth !== previousWidth) runSlider();
+    previousWidth = window.innerWidth;
+  });
   runSlider();
   runSliderPopUp();
-  window.addEventListener('resize', runSlider);
 });
 
 function runSliderPopUp() {

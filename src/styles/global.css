@@ -1,7 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /***************************/
-/* General styles  */
+/* CSS VARIABLES  */
+/***************************/
+
+:root {
+  --main-bg-color: #000;
+  --main-font-color: #fff;
+  --brand-color: #e50914;
+  --brand-color-darker: #a0060e;
+  --default-border-radius: 4px;
+}
+
+/***************************/
+/* GENERAL STYLES  */
 /***************************/
 
 *,
@@ -63,7 +75,6 @@ input:-webkit-autofill {
 }
 
 /* Default button styles */
-
 .btn {
   display: flex;
   align-items: center;
@@ -82,7 +93,7 @@ input:-webkit-autofill {
 }
 
 /***************************/
-/* Helpers  */
+/* HELPER CLASSES  */
 /***************************/
 
 .hidden {

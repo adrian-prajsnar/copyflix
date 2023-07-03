@@ -1,5 +1,4 @@
-@import '/src/styles/general.css';
-@import '/src/styles/variables.css';
+@import '/src/styles/global.css';
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
 
 body {

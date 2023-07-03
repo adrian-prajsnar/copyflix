@@ -1,5 +1,4 @@
-@import '/src/styles/general.css';
-@import '/src/styles/variables.css';
+@import '/src/styles/global.css';
 
 /***************************/
 /* GENERAL STYLES  */
@@ -398,7 +397,7 @@ body {
 }
 
 /***************************/
-/* COPYRIGHTS POP-UP (added dynamically by JS)  */
+/* COPYRIGHTS POP-UP (added dynamically in JS)  */
 /***************************/
 
 .overlay {

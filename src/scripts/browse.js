@@ -18,12 +18,14 @@ profilesContainer.addEventListener('click', e => {
   });
 
   if (profileName) sessionStorage.setItem('profileSelected', accountProfiles);
-
-  // if (profileName) sessionStorage.setItem('profileSelected', true);
 });
 
 // SESSION/LOCAL STORAGE
-if (!sessionStorage.getItem('isLoggedIn')) window.location.href = 'login.html';
+if (
+  !localStorage.getItem('isLoggedIn') &&
+  !sessionStorage.getItem('isLoggedIn')
+)
+  window.location.href = 'login.html';
 
 if (sessionStorage.getItem('profileSelected'))
   window.location.href = 'home.html';
