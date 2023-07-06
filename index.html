@@ -13,8 +13,11 @@
       content="oglądanie filmów, oglądać filmy, filmy online, oglądać telewizję, telewizja online, programy telewizyjne online, oglądać programy TV, oglądać programy telewizyjne, strumieniowanie telewizji, przesyłanie strumieniowe telewizji, telewizja strumieniowo, natychmiastowe przesyłanie strumieniowe, oglądanie online, filmy, oglądanie filmów Polska, oglądać tv online, oglądać telewizję online, bez pobierania, filmy pełnometrażowe"
     />
 
-    <link rel="icon" href="src/images/fav-64x64.png" />
-    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="icon" href="src/images/favicon/favicon-64x64.png" />
+    <link
+      rel="apple-touch-icon"
+      href="src/images/favicon/favicon-180x180.png"
+    />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="src/styles/main.css" />
     <link rel="stylesheet" href="src/styles/main-queries.css" />
@@ -40,13 +43,13 @@
   <body>
     <section class="hero-section">
       <header class="header">
-        <figure class="logo-container">
+        <div class="logo-container">
           <img
             class="logo"
             src="src/images/netlifx-logo.png"
             alt="Logo Neflixa"
           />
-        </figure>
+        </div>
         <div class="header-right">
           <div class="lang-container">
             <ion-icon class="globe-icon" name="globe-outline"></ion-icon>
@@ -54,14 +57,9 @@
               class="arrow-down-icon"
               name="caret-down-outline"
             ></ion-icon>
-            <select
-              onchange="javascript:location.href = this.value"
-              class="select-lang"
-              name="select-lang"
-              required
-            >
-              <option value="index.html">Polski</option>
-              <option value="index-en.html">English</option>
+            <select class="select-lang" name="select-lang" required>
+              <option value="">Polski</option>
+              <option value="">English</option>
             </select>
           </div>
           <button type="button" role="link" class="btn" tabindex="-1">
@@ -121,22 +119,22 @@
             odtwarzaczach Chromecast, Apple TV oraz Blu-ray i&nbsp;nie tylko.
           </p>
         </div>
-        <figure class="about-img-container">
+        <div class="about-img-container">
           <img
-            src="src/images/netflix-tv2.png"
+            src="src/images/page-index/netflix-tv2.png"
             alt="Aplikacja Netflixa na telewizorze"
           />
-        </figure>
+        </div>
         <span class="border-bottom"></span>
       </section>
 
       <section class="about-section">
-        <figure class="about-img-container">
+        <div class="about-img-container">
           <img
-            src="src/images/netflix-offline2.png"
+            src="src/images/page-index/netflix-offline2.png"
             alt="Pobieranie filmu na telefon"
           />
-        </figure>
+        </div>
         <div class="about-text-container">
           <h2 class="secondary-heading">
             Pobierz ulubione tytuły i&nbsp;oglądaj offline.
@@ -156,22 +154,22 @@
             tablecie, laptopie, telewizorze... Bez dodatkowych opłat.
           </p>
         </div>
-        <figure class="about-img-container">
+        <div class="about-img-container">
           <img
-            src="src/images/netflix-watch-everywhere2.png"
+            src="src/images/page-index/netflix-watch-everywhere2.png"
             alt="Aplikacja Netflixa na telewizorze, tablecie, telefonie"
           />
-        </figure>
+        </div>
         <span class="border-bottom"></span>
       </section>
 
       <section class="about-section">
-        <figure class="about-img-container">
+        <div class="about-img-container">
           <img
-            src="src/images/netflix-kids2.png"
+            src="src/images/page-index/netflix-kids2.png"
             alt="Rodzic, zadowolone dziecko, królik"
           />
-        </figure>
+        </div>
         <div class="about-text-container">
           <h2 class="secondary-heading">Utwórz profile dla dzieci.</h2>
           <p class="main-text">
@@ -424,14 +422,9 @@
             class="arrow-down-icon"
             name="caret-down-outline"
           ></ion-icon>
-          <select
-            onchange="javascript:location.href = this.value"
-            class="select-lang"
-            name="select-lang"
-            required
-          >
-            <option value="index.html">Polski</option>
-            <option value="index-en.html">English</option>
+          <select class="select-lang" name="select-lang" required>
+            <option value="">Polski</option>
+            <option value="">English</option>
           </select>
         </div>
         <p class="brand-location">Netflix Polska</p>

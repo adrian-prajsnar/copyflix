@@ -1,4 +1,4 @@
-// CTA Form
+// CTA FORM
 const ctaForm = document.querySelectorAll('.cta-form');
 const input = document.querySelectorAll('.cta-input');
 
@@ -115,7 +115,7 @@ function checkInputLive() {
   });
 }
 
-// CTA Form - helper functions
+// CTA FORM - HELPER FUNCTIONS
 function displayValid(msg, msgCon, inpCon, btn) {
   msg.textContent = '';
   msgCon.classList.add('hidden');
@@ -166,7 +166,7 @@ function clearCurrentEmail() {
 }
 // clearCurrentEmail();
 
-// Accordion
+// ACCORDION FUNCTIONALITY
 const accItem = document.querySelectorAll('.accordion-item');
 const accDescription = document.querySelectorAll('.accordion-item-description');
 const accIconOpen = document.querySelectorAll('.accordion-icon-open');
@@ -188,7 +188,7 @@ accItem.forEach((acc, i, arr) => {
   });
 });
 
-// Copyrights pop-up
+// COPYRIGHTS POP-UP
 const popUpMarkup = `
     <aside>
       <div class="overlay hidden-2" aria-hidden="true"></div>
@@ -225,7 +225,6 @@ function togglePopUp() {
   setTimeout(() => {
     overlay.classList.remove('hidden-2');
     copyrightsPopUp.classList.remove('hidden-2');
-
     [copyrightsIconClose, overlay].forEach(element =>
       element.addEventListener('click', () => {
         overlay.classList.add('hidden-2');

@@ -11,7 +11,7 @@ body {
 /***************************/
 
 .main-view {
-  background-image: url(/src/images/background-home2.webp);
+  background-image: url(/src/images/page-home/background-home.webp);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -54,10 +54,7 @@ body {
   gap: 0.8vw;
 }
 
-.btn-play-link {
-}
-
-.btn-play,
+.btn-play-link,
 .btn-more-info {
   display: flex;
   align-items: center;
@@ -68,14 +65,15 @@ body {
   font-weight: 600;
   cursor: pointer;
   border-radius: var(--default-border-radius);
+  z-index: inherit;
 }
 
-.btn-play {
+.btn-play-link {
   background-color: #fff;
   color: #000;
 }
 
-.btn-play:hover {
+.btn-play-link:hover {
   background-color: rgba(255, 255, 255, 0.75);
 }
 
@@ -94,7 +92,7 @@ body {
 }
 
 /***************************/
-/* MAIN VIEW RESPONSIVE  */
+/* MAIN VIEW MEDIA QUERY  */
 /***************************/
 
 /* 1400px */
@@ -122,7 +120,7 @@ body {
     font-size: 1.3vw;
   }
 
-  .btn-play,
+  .btn-play-link,
   .btn-more-info {
     gap: 0.8vw;
     padding: 0.7vw 2vw 0.7vw 1.7vw;

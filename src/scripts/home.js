@@ -52,6 +52,7 @@ primaryNavItems.addEventListener('click', e => {
 
 // PRIMARY NAV - MENU BAR ACTIVATION
 const primaryNavContainer = document.querySelector('.primary-nav-container');
+let navItemsTimeout;
 
 function setTabIndexPrimaryNav() {
   window.innerWidth <= 1200
@@ -59,8 +60,6 @@ function setTabIndexPrimaryNav() {
     : (primaryNavContainer.tabIndex = '-1');
 }
 window.addEventListener('resize', setTabIndexPrimaryNav);
-
-let navItemsTimeout;
 
 function closePrimaryNavItems() {
   primaryNavItems.classList.remove('active');
@@ -80,7 +79,7 @@ primaryNavContainer.addEventListener('mouseleave', () => {
 // SECONDARY NAV - SEARCH ACTIVATION
 const searchOpen = document.querySelector('.search-btn');
 const searchContainer = document.querySelector('.search-container');
-const searchInput = document.querySelector('.search-input');
+const searchInput = document.querySelector('#search-input');
 const searchLabel = document.querySelector('.search-label');
 const searchClose = document.querySelector('.search-close');
 const searchNav = document.querySelector('#secondary-nav-item-search');
@@ -109,6 +108,7 @@ searchInput.addEventListener('focusout', () => {
 
 searchInput.addEventListener('input', e => {
   const text = e.target.value;
+  searchInput.setAttribute('value', text);
   text
     ? searchLabel.classList.add('hidden')
     : searchLabel.classList.remove('hidden');
@@ -122,6 +122,7 @@ searchInput.addEventListener('input', e => {
 
 searchClose.addEventListener('mouseup', e => {
   e.preventDefault();
+  searchInput.setAttribute('value', '');
   searchInput.value = '';
   searchInput.focus();
   searchLabel.classList.remove('hidden');
@@ -193,7 +194,7 @@ function addProfileNames() {
 }
 
 function setUpCurrentProfile() {
-  profileLogos[0].src = `src/images/profiles-${currentProfile.toLowerCase()}.png`;
+  profileLogos[0].src = `src/images/page-browse/profiles-${currentProfile.toLowerCase()}.png`;
   profileLogos[0].alt = `Awatar użytkownika ${currentProfile}`;
 }
 
@@ -201,7 +202,7 @@ function setUpOtherProfiles() {
   profileLogos.forEach((profile, index) => {
     if (index === 0) return;
     else {
-      profile.src = `src/images/profiles-${otherProfiles[
+      profile.src = `src/images/page-browse/profiles-${otherProfiles[
         index - 1
       ].toLowerCase()}.png`;
       profile.alt = `Awatar użytkownika ${otherProfiles[index]}`;
@@ -274,6 +275,7 @@ function runSlider() {
         if (slide.tabIndex === 0) slide.classList.add('enabled');
       });
     }
+
     updateAccesibility();
 
     function createStripes() {
@@ -286,6 +288,7 @@ function runSlider() {
     for (let i = 0; i < pages; i++) {
       createStripes();
     }
+
     sliderStripe[0]?.classList.add('active');
 
     function moveRight() {
@@ -359,23 +362,14 @@ function runSlider() {
 
     arrowLeft.addEventListener('click', moveLeft);
     arrowRight.addEventListener('click', moveRight);
-
     dimmedLeft.addEventListener('keydown', e => {
       if (e.key === 'Enter') moveLeft();
     });
-
     dimmedRight.addEventListener('keydown', e => {
       if (e.key === 'Enter') moveRight();
     });
   });
 }
-
-// SESSION/LOCAL STORAGE
-if (
-  !localStorage.getItem('isLoggedIn') &&
-  !sessionStorage.getItem('isLoggedIn')
-)
-  window.location.href = 'login.html';
 
 // GET MOVIES - API CALL
 const API_KEY = '0dd7b24bac1f9ee9f5384ca0ffa09559';
@@ -399,7 +393,7 @@ async function getCategory(apiLink, sliderId, top10 = false) {
     top10
       ? (dataArray = data.results.slice(0, 10))
       : (dataArray = data.results);
-    const sliderContent = document.querySelector(`#${sliderId}`);
+    const sliderContent = document.querySelector(`#category-${sliderId}`);
 
     if (top10) dataArray.slice(0, 10);
 
@@ -568,6 +562,7 @@ async function getSlidersData() {
 }
 
 getSlidersData().then(() => {
+  // When width is changing adjust sliders
   let previousWidth = window.innerWidth;
   window.addEventListener('resize', () => {
     if (window.innerWidth !== previousWidth) runSlider();
@@ -630,12 +625,11 @@ function runSliderPopUp() {
         const rect = slider.getBoundingClientRect();
         const distanceFromLeft = Math.round(rect.left);
 
-        console.log(sliderPaddingNum);
-        console.log(distanceFromLeft);
-
-        if (rect.right / sliderPaddingNum > 23)
+        // Pop-up attached to left
+        if (rect.right / sliderPaddingNum > 22)
           sliderPopUp.classList.add('right');
 
+        // Pop-up attached to right
         if (
           distanceFromLeft === sliderPaddingNum ||
           distanceFromLeft - 1 === sliderPaddingNum ||
@@ -643,6 +637,7 @@ function runSliderPopUp() {
         )
           sliderPopUp.classList.add('left');
 
+        // Pop-up attached to top
         if (
           width <= 1000 &&
           currentCategory.classList.contains('category-view-absolute')
@@ -682,3 +677,10 @@ const dedicatedServiceCode = '997-666';
 serviceCode.addEventListener('click', () => {
   serviceCode.textContent = dedicatedServiceCode;
 });
+
+// SESSION/LOCAL STORAGE
+if (
+  !localStorage.getItem('isLoggedIn') &&
+  !sessionStorage.getItem('isLoggedIn')
+)
+  window.location.href = 'login.html';

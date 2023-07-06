@@ -1,4 +1,4 @@
-// PROFILES onClick
+// SELECTING PROFILE
 const profilesContainer = document.querySelector('.profiles-container');
 const profile = document.querySelectorAll('.profile');
 const profileNames = document.querySelectorAll('.profile-name');

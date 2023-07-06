@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
-  background-image: url(/src/images/netflix-background2.jpg);
+  background-image: url(/src/images/page-index/netflix-background2.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -77,12 +77,12 @@ main {
 }
 
 .no-account-info-link {
-  border-bottom: 0.1rem solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .no-account-info-link:focus-visible {
   border-bottom: none;
-  outline-offset: 0.1rem;
+  outline-offset: 1px;
 }
 
 .email-tel-container,
@@ -144,7 +144,7 @@ main {
 
 #email-input.has-error,
 #password-input.has-error {
-  border-bottom: 0.2rem solid #e87c03;
+  border-bottom: 2px solid #e87c03;
 }
 
 .error-msg-email,
@@ -206,7 +206,7 @@ main {
   width: 1.6rem;
   height: 1.6rem;
   background-color: #737373;
-  border-radius: 2px;
+  border-radius: var(--lower-border-radius);
 }
 
 .remember-checkbox:checked + .remember-me-label::before {
@@ -223,16 +223,16 @@ main {
   font-size: 1.3rem;
   color: #b3b3b3;
   padding-bottom: 0.1rem;
-  border-bottom: 0.1rem solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .login-help-link:hover {
-  border-bottom: 0.1rem solid #b3b3b3;
+  border-bottom: 1px solid #b3b3b3;
 }
 
 .login-help-link:focus-visible:hover,
 .btn-captcha:focus-visible:hover {
-  border-bottom: 0.1rem solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .login-form-other {
@@ -250,7 +250,7 @@ main {
 }
 
 .login-signup-link:hover {
-  border-bottom: 0.1rem solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .login-signup-link:focus-visible,
@@ -267,14 +267,14 @@ main {
 
 .btn-captcha {
   color: #0071eb;
-  border-bottom: 0.1rem solid transparent;
+  border-bottom: 1px solid transparent;
   margin-bottom: 1.2rem;
   transition: opacity 0.1s ease, visibility 0.1s ease;
 }
 
 .btn-captcha:hover {
   cursor: pointer;
-  border-bottom: 0.1rem solid #0071eb;
+  border-bottom: 1px solid #0071eb;
 }
 
 .captcha-description {
@@ -286,7 +286,7 @@ main {
 }
 
 .captcha-description-link:hover {
-  border-bottom: 0.1rem solid #0071eb;
+  border-bottom: 1px solid #0071eb;
 }
 
 /***************************/
@@ -337,7 +337,7 @@ main {
 
 .contact-tel a:hover,
 .footer-link a:hover {
-  border-bottom: 0.1rem solid #6e6e6e;
+  border-bottom: 1px solid #6e6e6e;
 }
 
 .lang-container {
@@ -369,8 +369,8 @@ main {
   background-color: #000;
   padding: 1.6rem 3.2rem 1.6rem 4rem;
   font-size: 1.6rem;
-  border-radius: 2px;
-  border: 0.1rem solid #333;
+  border-radius: var(--lower-border-radius);
+  border: 1px solid #333;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -415,7 +415,7 @@ main {
   }
 
   .footer-background {
-    border-top: 0.1rem solid #757575;
+    border-top: 1px solid #757575;
   }
 
   .footer-section {

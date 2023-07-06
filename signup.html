@@ -13,8 +13,11 @@
       content="oglądanie filmów, oglądać filmy, filmy online, oglądać telewizję, telewizja online, programy telewizyjne online, oglądać programy TV, oglądać programy telewizyjne, strumieniowanie telewizji, przesyłanie strumieniowe telewizji, telewizja strumieniowo, natychmiastowe przesyłanie strumieniowe, oglądanie online, filmy, oglądanie filmów Polska, oglądać tv online, oglądać telewizję online, bez pobierania, filmy pełnometrażowe"
     />
 
-    <link rel="icon" href="src/images/fav-64x64.png" />
-    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="icon" href="src/images/favicon/favicon-64x64.png" />
+    <link
+      rel="apple-touch-icon"
+      href="src/images/favicon/favicon-180x180.png"
+    />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="src/styles/signup.css" />
 
@@ -38,12 +41,12 @@
       <a class="logo-link" href="index.html">
         <img class="logo" src="src/images/netlifx-logo.png" alt="Logo Netflixa"
       /></a>
-      <a href="login.html" class="login-link">Zaloguj się</a>
+      <a href="login.html" class="login-link"><span>Zaloguj się</span></a>
     </header>
 
     <main>
       <section class="reg-container">
-        <figure class="reg-img"></figure>
+        <div class="reg-img"></div>
         <span class="reg-step"
           >KROK <strong>1</strong> z <strong>3</strong></span
         >
@@ -82,14 +85,9 @@
               class="arrow-down-icon"
               name="caret-down-outline"
             ></ion-icon>
-            <select
-              onchange="javascript:location.href = this.value"
-              class="select-lang"
-              name="select-lang"
-              required
-            >
-              <option value="index.html">Polski</option>
-              <option value="index-en.html">English</option>
+            <select class="select-lang" name="select-lang" required>
+              <option value="">Polski</option>
+              <option value="">English</option>
             </select>
           </div>
         </section>

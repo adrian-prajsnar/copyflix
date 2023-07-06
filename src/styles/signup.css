@@ -30,7 +30,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 1.6rem 3%;
-  border-bottom: 0.1rem solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .logo {
@@ -46,15 +46,15 @@ main {
   font-size: 1.8rem;
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 0.1rem solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .login-link:hover {
-  border-bottom: 0.1rem solid #333;
+  border-bottom: 1px solid #333;
 }
 
 .login-link:focus-visible:hover {
-  border-bottom: 0.1rem solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 /***************************/
@@ -69,7 +69,7 @@ main {
 }
 
 .reg-img {
-  background: url(/src/images/devices.png);
+  background: url(/src/images/page-signup/devices.png);
   background-size: 26rem;
   background-repeat: no-repeat;
   height: 10rem;
@@ -117,7 +117,7 @@ main {
 
 .footer-background {
   background-color: #f3f3f3;
-  border-top: 0.1rem solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
 }
 
 .footer-section {
@@ -163,7 +163,7 @@ main {
 
 .contact-tel a:hover,
 .footer-link a:hover {
-  border-bottom: 0.1rem solid #6e6e6e;
+  border-bottom: 1px solid #6e6e6e;
 }
 
 .lang-container {
@@ -195,8 +195,8 @@ main {
   background-color: #fff;
   padding: 1.6rem 3.2rem 1.6rem 4rem;
   font-size: 1.6rem;
-  border-radius: 2px;
-  border: 0.1rem solid #a6a6a6;
+  border-radius: var(--lower-border-radius);
+  border: 1px solid #a6a6a6;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

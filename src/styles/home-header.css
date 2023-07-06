@@ -3,11 +3,11 @@
 /***************************/
 
 .header {
-  position: fixed;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
   gap: 2rem;
   height: 6.8rem;
   width: 100%;
@@ -38,7 +38,8 @@
 }
 
 .primary-nav-browse,
-.primary-nav-arrow-down {
+.primary-nav-arrow-down,
+.primary-nav-arrow-up {
   display: none;
 }
 
@@ -48,10 +49,6 @@
   justify-content: center;
   gap: 2rem;
   list-style: none;
-}
-
-.primary-nav-arrow-up {
-  display: none;
 }
 
 .primary-nav-item {
@@ -73,7 +70,7 @@
   pointer-events: none;
 }
 
-.secondary-navigation {
+.secondary-nav-items {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +91,7 @@
   position: relative;
   height: 3.6rem;
   background-color: #000;
-  border: 0.1rem solid #fff;
+  border: 1px solid #fff;
   cursor: default;
   overflow: hidden;
 }
@@ -112,27 +109,27 @@
 
 .search-label {
   position: absolute;
-  pointer-events: none;
   top: 50%;
   left: 4rem;
   transform: translateY(-50%);
   color: #b3b3b3;
+  pointer-events: none;
   white-space: nowrap;
 }
 
-.search-input {
+#search-input {
   height: 100%;
   width: 0;
   padding: 0;
   transition: width 250ms, padding 250ms;
 }
 
-.search-input.expanded {
+#search-input.expanded {
   width: 27rem;
   padding: 0 4rem;
 }
 
-.search-input:focus {
+#search-input:focus {
   outline: 0;
 }
 
@@ -143,6 +140,11 @@
   transform: translateY(-50%);
   right: 0;
   cursor: pointer;
+}
+
+.search-close:focus-visible {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .search-close-icon {
@@ -175,12 +177,11 @@
   right: 0;
   min-height: 11.6rem;
   width: 41rem;
-  height: auto;
   background-color: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   cursor: default;
-  border: 0.1rem solid rgba(255, 255, 255, 0.15);
-  border-top: 0.2rem solid #e5e5e5;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25);
   opacity: 0;
   visibility: hidden;
   transition: opacity 150ms, visibility 150ms;
@@ -225,10 +226,10 @@
   top: 5.2rem;
   right: 0;
   width: 22rem;
-  height: 38rem;
+  min-height: 38rem;
   font-size: 1.3rem;
   background-color: rgba(0, 0, 0, 0.9);
-  border: 0.1rem solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   cursor: default;
   opacity: 0;
   visibility: hidden;
@@ -262,11 +263,11 @@
 }
 
 .profile-link:hover .profile-item {
-  border-bottom: 0.1rem solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 .profile-item {
-  border-bottom: 0.1rem solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .profile-icon-container {
@@ -285,11 +286,11 @@
 .profile-logout {
   text-align: center;
   padding-top: 1.3rem;
-  border-top: 0.1rem solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .profile-logout-link:hover {
-  border-bottom: 0.1rem solid currentColor;
+  border-bottom: 1px solid currentColor;
 }
 
 /***************************/
@@ -320,16 +321,16 @@
   }
 
   .primary-nav-items {
-    position: absolute;
     flex-direction: column;
     gap: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-top: 2px solid #e5e5e5;
+    position: absolute;
     left: 4vw;
     top: 100%;
     width: 30rem;
     height: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 2px solid #e5e5e5;
     opacity: 0;
     visibility: hidden;
     transition: opacity 150ms, visibility 150ms;
@@ -355,11 +356,10 @@
 
 @media (max-width: 62.5em) {
   .header {
-    height: 4.8rem;
-    background-color: #141414;
-
     /* Main-view is hidden at this state (1000px) so header has to be visible */
     visibility: visible;
+    height: 4.8rem;
+    background-color: #141414;
   }
 }
 
@@ -375,7 +375,7 @@
 /* 550px */
 @media (max-width: 34.375em) {
   .primary-navigation,
-  .secondary-navigation {
+  .secondary-nav-items {
     gap: 1.6rem;
   }
 
@@ -388,7 +388,7 @@
     display: none;
   }
 
-  .search-input.expanded {
+  #search-input.expanded {
     width: 19rem;
   }
 
@@ -421,7 +421,7 @@
   }
 
   .primary-navigation,
-  .secondary-navigation {
+  .secondary-nav-items {
     gap: 0.8rem;
   }
 

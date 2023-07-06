@@ -17,6 +17,7 @@ const correctAccounts = [
 form.addEventListener('submit', e => {
   e.preventDefault();
 
+  // When user submits correct data
   if (
     correctAccounts.some(
       acc =>
@@ -26,6 +27,8 @@ form.addEventListener('submit', e => {
     if (rememberData.checked) localStorage.setItem('isLoggedIn', true);
     else sessionStorage.setItem('isLoggedIn', true);
     window.location.href = 'browse.html';
+
+    // When user submits wrong data
   } else {
     const digitsOnly = /^\d+$/.test(emailInput.value);
     digitsOnly
@@ -42,11 +45,11 @@ form.addEventListener('submit', e => {
   }
 });
 
+// Checking email
 emailInput.addEventListener('invalid', () => {
   checkEmail(emailInput, errorMsgEmail);
   checkEmailLive();
 });
-
 emailInput.addEventListener(
   'blur',
   () => {
@@ -56,11 +59,11 @@ emailInput.addEventListener(
   true
 );
 
+// Checking password
 passwordInput.addEventListener('invalid', () => {
   checkPassword(passwordInput, errorMsgPassword);
   checkPasswordLive();
 });
-
 passwordInput.addEventListener(
   'blur',
   () => {

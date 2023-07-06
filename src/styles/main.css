@@ -23,7 +23,7 @@ body {
 /***************************/
 
 .hero-section {
-  background-image: url(/src/images/netflix-background2.jpg);
+  background-image: url(/src/images/page-index/netflix-background2.jpg);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -97,7 +97,7 @@ body {
   font-size: 1.6rem;
   font-weight: 500;
   background: rgb(17, 17, 17, 0.7);
-  border: 0.1rem solid rgb(118, 118, 118);
+  border: 1px solid rgb(118, 118, 118);
   border-radius: var(--default-border-radius);
   appearance: none;
   -webkit-appearance: none;
@@ -164,15 +164,15 @@ body {
 .cta-input-container {
   position: relative;
   border-radius: var(--default-border-radius);
-  border: 0.1rem solid rgb(118, 118, 118);
+  border: 1px solid #767676;
 }
 
 .cta-input-container.valid {
-  border: 0.1rem solid #2bb871;
+  border: 1px solid #2bb871;
 }
 
 .cta-input-container.invalid {
-  border: 0.1rem solid #eb3942;
+  border: 1px solid #eb3942;
 }
 
 .cta-input:focus {
@@ -378,7 +378,7 @@ body {
 .contact-tel a:active,
 .footer-link a:hover,
 .footer-link a:active {
-  border-bottom: 0.1rem solid #8f8f8f;
+  border-bottom: 1px solid #8f8f8f;
 }
 
 .contact-tel a:focus-visible,
@@ -419,7 +419,7 @@ body {
   width: 144rem;
   max-height: 90%;
   background-color: transparent;
-  border: 0.1rem solid #fff;
+  border: 1px solid #fff;
   border-radius: var(--default-border-radius);
   padding: 6.4rem 4.8rem;
   z-index: 1000;

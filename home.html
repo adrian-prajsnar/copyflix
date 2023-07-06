@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="src/images/fav-64x64.png" />
-    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="icon" href="src/images/favicon/favicon-64x64.png" />
+    <link
+      rel="apple-touch-icon"
+      href="src/images/favicon/favicon-180x180.png"
+    />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="src/styles/home-main-view.css" />
     <link rel="stylesheet" href="src/styles/home-header.css" />
@@ -29,7 +32,7 @@
   </head>
   <body>
     <section class="main-view">
-      <div class="main-view-dimmed-background-left"></div>
+      <span class="main-view-dimmed-background-left" aria-hidden="true"></span>
       <header class="header">
         <nav class="primary-navigation">
           <a href="#" class="primary-nav-logo-link">
@@ -45,7 +48,6 @@
               class="primary-nav-arrow-down"
               name="caret-down-outline"
             ></ion-icon>
-
             <ul class="primary-nav-items">
               <ion-icon
                 class="primary-nav-arrow-up"
@@ -76,161 +78,168 @@
         </nav>
 
         <nav class="secondary-navigation">
-          <div class="secondary-nav-item" id="secondary-nav-item-search">
-            <button class="search-btn">
-              <ion-icon class="search-icon" name="search-outline"></ion-icon>
-            </button>
-            <div class="search-container hidden">
-              <button class="search-btn-absolute">
+          <ul class="secondary-nav-items">
+            <li class="secondary-nav-item" id="secondary-nav-item-search">
+              <button class="search-btn">
                 <ion-icon class="search-icon" name="search-outline"></ion-icon>
               </button>
-              <label for="search-input" class="search-label"
-                >Tytuły, osoby, gatunki</label
-              >
-              <input type="text" class="search-input" />
-              <button class="search-close hidden">
-                <ion-icon
-                  class="search-close-icon"
-                  name="close-outline"
-                ></ion-icon>
-              </button>
-            </div>
-          </div>
-          <div class="secondary-nav-item" id="secondary-nav-item-kids">
-            <a href="#">Dzieci</a>
-          </div>
-          <div
-            class="secondary-nav-item"
-            id="secondary-nav-item-notifications"
-            tabindex="0"
-          >
-            <ion-icon
-              class="notifications-icon"
-              name="notifications-outline"
-            ></ion-icon>
-            <ion-icon
-              class="profile-arrow-up-notification"
-              name="caret-up-outline"
-            ></ion-icon>
-            <div class="notifications-container">
-              <span class="notifications-text">Brak nowych powiadomień</span>
-            </div>
-          </div>
-          <div
-            class="secondary-nav-item"
-            id="secondary-nav-item-profile"
-            tabindex="0"
-          >
-            <img class="profile-logo" />
-            <ion-icon
-              class="profile-arrow-down"
-              name="caret-down-outline"
-            ></ion-icon>
-            <ion-icon
-              class="profile-arrow-up"
-              name="caret-up-outline"
-            ></ion-icon>
-            <menu class="profile-drop-down">
-              <ul class="profiles-list">
-                <li class="profile">
-                  <a href="#" class="profile-link">
-                    <img class="profile-logo" />
-                    <span class="profile-item profile-name"></span>
-                  </a>
-                </li>
-                <li class="profile">
-                  <a href="#" class="profile-link">
-                    <img class="profile-logo" />
-                    <span class="profile-item profile-name"></span>
-                  </a>
-                </li>
-                <li class="profile">
-                  <a href="#" class="profile-link">
-                    <img class="profile-logo" />
-                    <span class="profile-item profile-name"></span>
-                  </a>
-                </li>
-                <li class="profile">
-                  <a href="#" class="profile-link">
-                    <img class="profile-logo" />
-                    <span class="profile-item profile-name"></span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="profiles-managment-list">
-                <li class="profile-managment">
-                  <a href="#" class="profile-link">
-                    <div class="profile-icon-container">
-                      <ion-icon
-                        class="profile-icon"
-                        name="build-outline"
-                      ></ion-icon>
-                    </div>
-                    <span class="profile-item">Zarządzaj profilami</span>
-                  </a>
-                </li>
-                <li class="profile-managment">
-                  <a href="#" class="profile-link">
-                    <div class="profile-icon-container">
-                      <ion-icon
-                        class="profile-icon"
-                        name="copy-outline"
-                      ></ion-icon>
-                    </div>
-                    <span class="profile-item">Przenieś profil</span>
-                  </a>
-                </li>
-                <li class="profile-managment">
-                  <a href="#" class="profile-link">
-                    <div class="profile-icon-container">
-                      <ion-icon
-                        class="profile-icon"
-                        name="person-outline"
-                      ></ion-icon>
-                    </div>
-                    <span class="profile-item">Konto</span>
-                  </a>
-                </li>
-                <li class="profile-managment">
-                  <a href="#" class="profile-link">
-                    <div class="profile-icon-container">
+              <div class="search-container hidden">
+                <button class="search-btn-absolute">
+                  <ion-icon
+                    class="search-icon"
+                    name="search-outline"
+                  ></ion-icon>
+                </button>
+                <label for="search-input" class="search-label"
+                  >Tytuły, osoby, gatunki</label
+                >
+                <input type="text" id="search-input" maxlength="80" value="" />
+                <button class="search-close hidden">
+                  <ion-icon
+                    class="search-close-icon"
+                    name="close-outline"
+                  ></ion-icon>
+                </button>
+              </div>
+            </li>
+            <li class="secondary-nav-item" id="secondary-nav-item-kids">
+              <a href="#">Dzieci</a>
+            </li>
+            <li
+              class="secondary-nav-item"
+              id="secondary-nav-item-notifications"
+              tabindex="0"
+            >
+              <ion-icon
+                class="notifications-icon"
+                name="notifications-outline"
+              ></ion-icon>
+              <ion-icon
+                class="profile-arrow-up-notification"
+                name="caret-up-outline"
+              ></ion-icon>
+              <div class="notifications-container">
+                <span class="notifications-text">Brak nowych powiadomień</span>
+              </div>
+            </li>
+            <li
+              class="secondary-nav-item"
+              id="secondary-nav-item-profile"
+              tabindex="0"
+            >
+              <img src="" alt="" class="profile-logo" />
+              <ion-icon
+                class="profile-arrow-down"
+                name="caret-down-outline"
+              ></ion-icon>
+              <ion-icon
+                class="profile-arrow-up"
+                name="caret-up-outline"
+              ></ion-icon>
+              <menu class="profile-drop-down">
+                <ul class="profiles-list">
+                  <li class="profile">
+                    <a href="#" class="profile-link">
+                      <img src="" alt="" class="profile-logo" />
+                      <span class="profile-item profile-name"></span>
+                    </a>
+                  </li>
+                  <li class="profile">
+                    <a href="#" class="profile-link">
+                      <img src="" alt="" class="profile-logo" />
+                      <span class="profile-item profile-name"></span>
+                    </a>
+                  </li>
+                  <li class="profile">
+                    <a href="#" class="profile-link">
+                      <img src="" alt="" class="profile-logo" />
+                      <span class="profile-item profile-name"></span>
+                    </a>
+                  </li>
+                  <li class="profile">
+                    <a href="#" class="profile-link">
+                      <img src="" alt="" class="profile-logo" />
+                      <span class="profile-item profile-name"></span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="profiles-managment-list">
+                  <li class="profile-managment">
+                    <a href="#" class="profile-link">
                       <div class="profile-icon-container">
                         <ion-icon
                           class="profile-icon"
-                          name="help-circle-outline"
+                          name="build-outline"
                         ></ion-icon>
                       </div>
-                    </div>
-                    <span class="profile-item">Centrum pomocy</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="profile-logout">
-                <a href="index.html" class="profile-logout-link">Wyloguj się</a>
-              </div>
-            </menu>
-          </div>
+                      <span class="profile-item">Zarządzaj profilami</span>
+                    </a>
+                  </li>
+                  <li class="profile-managment">
+                    <a href="#" class="profile-link">
+                      <div class="profile-icon-container">
+                        <ion-icon
+                          class="profile-icon"
+                          name="copy-outline"
+                        ></ion-icon>
+                      </div>
+                      <span class="profile-item">Przenieś profil</span>
+                    </a>
+                  </li>
+                  <li class="profile-managment">
+                    <a href="#" class="profile-link">
+                      <div class="profile-icon-container">
+                        <ion-icon
+                          class="profile-icon"
+                          name="person-outline"
+                        ></ion-icon>
+                      </div>
+                      <span class="profile-item">Konto</span>
+                    </a>
+                  </li>
+                  <li class="profile-managment">
+                    <a href="#" class="profile-link">
+                      <div class="profile-icon-container">
+                        <div class="profile-icon-container">
+                          <ion-icon
+                            class="profile-icon"
+                            name="help-circle-outline"
+                          ></ion-icon>
+                        </div>
+                      </div>
+                      <span class="profile-item">Centrum pomocy</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="profile-logout">
+                  <a href="index.html" class="profile-logout-link"
+                    >Wyloguj się</a
+                  >
+                </div>
+              </menu>
+            </li>
+          </ul>
         </nav>
       </header>
 
       <section class="movie-info-container">
         <img
-          src="src/images/heading-home2.webp"
+          src="src/images/page-home/heading-home.webp"
           alt="Serial Breaking Bad"
           class="main-img"
         />
         <p class="main-text">
-          Umierający na raka nauczyciel chemii łączy siły z byłym uczniem, aby
-          zabezpieczyć finansowo swoją rodzinę. Wspólnie zaczynają produkować i
-          sprzedawać metamfetaminę.
+          Umierający na raka nauczyciel chemii łączy siły z&nbsp;byłym uczniem,
+          aby zabezpieczyć finansowo swoją rodzinę. Wspólnie zaczynają
+          produkować i&nbsp;sprzedawać metamfetaminę.
         </p>
         <div class="btns-container">
-          <a class="btn-play-link" href="#">
-            <button class="btn-play" tabindex="-1">
+          <button class="btn-play" tabindex="-1">
+            <a class="btn-play-link" href="#">
               <ion-icon class="btn-play-icon" name="play"></ion-icon>
               <span>Odtwórz</span>
-            </button>
-          </a>
+            </a>
+          </button>
           <button class="btn-more-info">
             <ion-icon
               class="btn-more-info-icon"
@@ -241,22 +250,23 @@
         </div>
       </section>
 
-      <div class="category-background"></div>
+      <span class="category-background-dimmed" aria-hidden="true"></span>
       <div class="category-view-absolute">
         <h2 class="category-heading">Top 10 filmów w&nbsp;Polsce dzisiaj</h2>
         <div class="category-slider">
           <span class="slider-dimmed-left" tabindex="0"></span>
-          <ion-icon
-            class="slider-arrow-left"
-            name="chevron-back-outline"
-          ></ion-icon>
-          <div id="top10-movies" class="category-slider-content ranking"></div>
+          <button type="button" class="slider-arrow-left" tabindex="-1">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <div
+            id="category-top10-movies"
+            class="category-slider-content ranking"
+          ></div>
           <div class="slider-stripes"></div>
           <span class="slider-dimmed-right" tabindex="0"></span>
-          <ion-icon
-            class="slider-arrow-right"
-            name="chevron-forward-outline"
-          ></ion-icon>
+          <button type="button" class="slider-arrow-right" tabindex="-1">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
         </div>
       </div>
     </section>
@@ -267,17 +277,18 @@
           <h2 class="category-heading">Nowości</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div id="new-on-netflix" class="category-slider-content"></div>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div
+              id="category-new-on-netflix"
+              class="category-slider-content"
+            ></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -285,20 +296,18 @@
           <h2 class="category-heading">Najwyżej oceniane seriale</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
             <div
-              id="highest-rated-series"
+              id="category-highest-rated-series"
               class="category-slider-content"
             ></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -306,17 +315,15 @@
           <h2 class="category-heading">Popularne teraz</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div id="popular" class="category-slider-content"></div>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div id="category-popular" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -324,20 +331,18 @@
           <h2 class="category-heading">Top 10 seriali w Polsce dzisiaj</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
             <div
-              id="top10-series"
+              id="category-top10-series"
               class="category-slider-content ranking"
             ></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -345,17 +350,15 @@
           <h2 class="category-heading">Nadchodzące</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div id="upcoming" class="category-slider-content"></div>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div id="category-upcoming" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -363,17 +366,15 @@
           <h2 class="category-heading">Ulubione seriale</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div id="favourites" class="category-slider-content"></div>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div id="category-favourites" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -381,17 +382,15 @@
           <h2 class="category-heading">Seriale</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div id="series" class="category-slider-content"></div>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div id="category-series" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
 
@@ -399,21 +398,20 @@
           <h2 class="category-heading">Filmy</h2>
           <div class="category-slider">
             <span class="slider-dimmed-left" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-left"
-              name="chevron-back-outline"
-            ></ion-icon>
-            <div id="movies" class="category-slider-content"></div>
+            <button type="button" class="slider-arrow-left" tabindex="-1">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <div id="category-movies" class="category-slider-content"></div>
             <div class="slider-stripes"></div>
             <span class="slider-dimmed-right" tabindex="0"></span>
-            <ion-icon
-              class="slider-arrow-right"
-              name="chevron-forward-outline"
-            ></ion-icon>
+            <button type="button" class="slider-arrow-right" tabindex="-1">
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </button>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <section class="footer-section">
         <div class="footer-social-links">
@@ -421,6 +419,7 @@
             target="_blank"
             href="https://www.facebook.com/netflixpolska"
             class="footer-social-link"
+            aria-label="Facebook"
           >
             <ion-icon name="logo-facebook"></ion-icon
           ></a>
@@ -428,6 +427,7 @@
             target="_blank"
             href="https://www.instagram.com/netflixPL/"
             class="footer-social-link"
+            aria-label="Instagram"
           >
             <ion-icon name="logo-instagram"></ion-icon
           ></a>
@@ -435,6 +435,7 @@
             target="_blank"
             href="https://twitter.com/netflixpl"
             class="footer-social-link"
+            aria-label="Twitter"
           >
             <ion-icon name="logo-twitter"></ion-icon
           ></a>
@@ -442,28 +443,64 @@
             target="_blank"
             href="https://www.youtube.com/channel/UCwAiG5lj7w24SbgPy6eiYvg"
             class="footer-social-link"
+            aria-label="Youtube"
           >
             <ion-icon name="logo-youtube"></ion-icon
           ></a>
         </div>
 
         <ul class="footer-grid">
-          <li class="footer-link"><a href="#">Audiodeskrypcja</a></li>
-          <li class="footer-link"><a href="#">Centrum pomocy</a></li>
-          <li class="footer-link"><a href="#">Karty podarunkowe</a></li>
-          <li class="footer-link"><a href="#">Media Center</a></li>
-          <li class="footer-link"><a href="#">Relacje z inwestorami</a></li>
-          <li class="footer-link"><a href="#">Praca</a></li>
-          <li class="footer-link"><a href="#">Warunki korzystania</a></li>
-          <li class="footer-link"><a href="#">Prywatność</a></li>
-          <li class="footer-link"><a href="#">Informacje prawne</a></li>
-          <li class="footer-link"><a href="#">Ustawienia plików cookie</a></li>
-          <li class="footer-link"><a href="#">Informacje o firmie</a></li>
-          <li class="footer-link"><a href="#">Skontaktuj się z nami</a></li>
+          <li class="footer-link">
+            <a href="#"><span>Audiodeskrypcja</span></a>
+          </li>
+          <li class="footer-link">
+            <a href="https://help.netflix.com/"><span>Centrum pomocy</span></a>
+          </li>
+          <li class="footer-link">
+            <a href="#"><span>Karty podarunkowe</span></a>
+          </li>
+          <li class="footer-link">
+            <a href="https://media.netflix.com/"><span>Media Center</span></a>
+          </li>
+          <li class="footer-link">
+            <a href="http://ir.netflix.com/"
+              ><span>Relacje z&nbsp;inwestorami</span></a
+            >
+          </li>
+          <li class="footer-link">
+            <a href="https://jobs.netflix.com/"><span>Praca</span></a>
+          </li>
+          <li class="footer-link">
+            <a href="https://help.netflix.com/legal/termsofuse"
+              ><span>Warunki korzystania</span></a
+            >
+          </li>
+          <li class="footer-link">
+            <a href="https://help.netflix.com/legal/privacy"
+              ><span>Prywatność</span></a
+            >
+          </li>
+          <li class="footer-link">
+            <a href="https://help.netflix.com/legal/notices"
+              ><span>Informacje prawne</span></a
+            >
+          </li>
+          <li class="footer-link">
+            <a href="#"><span>Ustawienia plików cookie</span></a>
+          </li>
+          <li class="footer-link">
+            <a href="https://help.netflix.com/legal/corpinfo"
+              ><span>Informacje o&nbsp;firmie</span></a
+            >
+          </li>
+          <li class="footer-link">
+            <a href="https://help.netflix.com/contactus"
+              ><span>Skontaktuj się z&nbsp;nami</span></a
+            >
+          </li>
         </ul>
 
         <button class="footer-service-code">Kod serwisowy</button>
-
         <div class="footer-copyright">
           <span>© 1997–2023 Netflix, Inc.</span>
         </div>

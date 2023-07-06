@@ -13,8 +13,11 @@
       content="oglądanie filmów, oglądać filmy, filmy online, oglądać telewizję, telewizja online, programy telewizyjne online, oglądać programy TV, oglądać programy telewizyjne, strumieniowanie telewizji, przesyłanie strumieniowe telewizji, telewizja strumieniowo, natychmiastowe przesyłanie strumieniowe, oglądanie online, filmy, oglądanie filmów Polska, oglądać tv online, oglądać telewizję online, bez pobierania, filmy pełnometrażowe"
     />
 
-    <link rel="icon" href="src/images/fav-64x64.png" />
-    <link rel="apple-touch-icon" href="src/images/apple-touch-180x180.png" />
+    <link rel="icon" href="src/images/favicon/favicon-64x64.png" />
+    <link
+      rel="apple-touch-icon"
+      href="src/images/favicon/favicon-180x180.png"
+    />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="src/styles/general.css" />
     <link rel="stylesheet" href="src/styles/login.css" />
@@ -68,7 +71,6 @@
             <p class="error-msg-email hidden">
               Wprowadź prawidłowy adres e-mail lub numer telefonu.
             </p>
-
             <div class="password-container">
               <input
                 id="password-input"
@@ -86,9 +88,7 @@
             <p class="error-msg-password hidden">
               Hasło musi mieć długość od 4 do 60 znaków.
             </p>
-
             <button class="btn btn-login" type="submit">Zaloguj się</button>
-
             <div class="remember-me-container">
               <div class="remember-me">
                 <input class="remember-checkbox" type="checkbox" checked />
@@ -106,14 +106,12 @@
             Nie masz jeszcze konta w serwisie Netflix?
             <a href="index.html" class="login-signup-link">Zarejestruj się.</a>
           </p>
-
           <div class="captcha-container">
             <p class="captcha-info">
               Ta strona korzysta z zabezpieczenia Google reCAPTCHA, by upewnić
               się, że nie jesteś botem.
               <button class="btn-captcha">Dowiedz się więcej.</button>
             </p>
-
             <p class="captcha-description hidden-2">
               Informacje gromadzone przez Google reCAPTCHA podlegają
               <a
@@ -151,14 +149,30 @@
             <li class="footer-link">
               <a href="#">Często zadawane pytania</a>
             </li>
-            <li class="footer-link"><a href="#">Centrum pomocy</a></li>
-            <li class="footer-link"><a href="#">Sklep Netflix</a></li>
-            <li class="footer-link"><a href="#">Warunki korzystania</a></li>
-            <li class="footer-link"><a href="#">Prywatność</a></li>
+            <li class="footer-link">
+              <a href="https://help.netflix.com/support/412"
+                >Często zadawane pytania</a
+              >
+            </li>
+            <li class="footer-link">
+              <a href="https://help.netflix.com">Centrum pomocy</a>
+            </li>
+            <li class="footer-link">
+              <a href="https://help.netflix.com/legal/termsofuse"
+                >Warunki korzystania</a
+              >
+            </li>
+            <li class="footer-link">
+              <a href="https://help.netflix.com/legal/privacy">Prywatność</a>
+            </li>
             <li class="footer-link">
               <a href="#">Ustawienia plików cookie</a>
             </li>
-            <li class="footer-link"><a href="#">Informacje o firmie</a></li>
+            <li class="footer-link">
+              <a href="https://help.netflix.com/legal/corpinfo"
+                >Informacje o firmie</a
+              >
+            </li>
           </ul>
 
           <div class="lang-container">
@@ -167,14 +181,9 @@
               class="arrow-down-icon"
               name="caret-down-outline"
             ></ion-icon>
-            <select
-              onchange="javascript:location.href = this.value"
-              class="select-lang"
-              name="select-lang"
-              required
-            >
-              <option value="index.html">Polski</option>
-              <option value="index-en.html">English</option>
+            <select class="select-lang" name="select-lang" required>
+              <option value="">Polski</option>
+              <option value="">English</option>
             </select>
           </div>
         </section>

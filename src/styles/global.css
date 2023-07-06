@@ -9,7 +9,9 @@
   --main-font-color: #fff;
   --brand-color: #e50914;
   --brand-color-darker: #a0060e;
+  --lower-border-radius: 2px;
   --default-border-radius: 4px;
+  --higher-border-radius: 6px;
 }
 
 /***************************/
