@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #fff;
-  color: #333;
+  color: var(--grey);
 }
 
 main {
@@ -94,7 +94,7 @@ main {
 }
 
 .reg-btn {
-  color: #fff;
+  color: var(--main-font-color);
   background-color: var(--brand-color);
   height: 6.4rem;
   width: 100%;
@@ -176,7 +176,7 @@ main {
   top: 50%;
   left: 1.2rem;
   transform: translate(0, -50%);
-  color: #333;
+  color: var(--grey);
   font-size: 2rem;
   pointer-events: none;
 }
@@ -186,7 +186,7 @@ main {
   top: 50%;
   right: 1.2rem;
   transform: translate(0, -50%);
-  color: #333;
+  color: var(--grey);
   font-size: 1.6rem;
   pointer-events: none;
 }

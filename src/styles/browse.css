@@ -10,7 +10,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   color: var(--main-font-color);
-  background-color: #141414;
+  background-color: var(--browse-home-bg-color);
 }
 
 /***************************/
@@ -57,13 +57,13 @@ body {
 
 .profile-link:hover .profile-img,
 .profile-link:focus .profile-img {
-  outline: 0.3rem solid #fff;
+  outline: 0.3rem solid currentColor;
   outline-offset: -0.3rem;
 }
 
 .profile-link:hover .profile-name,
 .profile-link:focus .profile-name {
-  color: #fff;
+  color: currentColor;
 }
 
 .profile-img {
@@ -75,7 +75,7 @@ body {
 
 .profile-name {
   font-size: 2rem;
-  color: #808080;
+  color: var(--browse-home-font-color);
 }
 
 .manage-profiles {
@@ -83,15 +83,15 @@ body {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.3;
-  color: #808080;
+  color: var(--browse-home-font-color);
   cursor: pointer;
-  border: 1px solid #808080;
+  border: 1px solid var(--browse-home-font-color);
 }
 
 .manage-profiles:hover,
 .manage-profiles:focus {
-  color: #fff;
-  border-color: #fff;
+  color: currentColor;
+  border-color: currentColor;
 }
 
 /***************************/

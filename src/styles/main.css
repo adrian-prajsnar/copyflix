@@ -260,7 +260,11 @@ body {
 
 .about-img-container img {
   width: 100%;
-  background: radial-gradient(50% 50% at 50% 50%, #65143b 0%, #000 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #65143b 0%,
+    var(--main-bg-color) 100%
+  );
 }
 
 /***************************/
@@ -345,7 +349,7 @@ body {
   max-width: 125rem;
   margin: 0 auto;
   padding: 9.4rem 0 8.6rem;
-  color: #8f8f8f;
+  color: var(--white-darker-3);
 }
 
 .contact-tel {
@@ -370,7 +374,7 @@ body {
 
 .contact-tel a,
 .footer-link a {
-  color: #8f8f8f;
+  color: var(--white-darker-3);
   text-decoration: none;
 }
 
@@ -378,7 +382,7 @@ body {
 .contact-tel a:active,
 .footer-link a:hover,
 .footer-link a:active {
-  border-bottom: 1px solid #8f8f8f;
+  border-bottom: 1px solid var(--white-darker-3);
 }
 
 .contact-tel a:focus-visible,
@@ -419,7 +423,7 @@ body {
   width: 144rem;
   max-height: 90%;
   background-color: transparent;
-  border: 1px solid #fff;
+  border: 1px solid var(--main-font-color);
   border-radius: var(--default-border-radius);
   padding: 6.4rem 4.8rem;
   z-index: 1000;
