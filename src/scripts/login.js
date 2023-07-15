@@ -26,7 +26,7 @@ form.addEventListener('submit', e => {
   ) {
     if (rememberData.checked) localStorage.setItem('isLoggedIn', true);
     else sessionStorage.setItem('isLoggedIn', true);
-    window.location.href = 'browse.html';
+    window.location.href = '/src/pages/browse.html';
 
     // When user submits wrong data
   } else {
@@ -35,7 +35,7 @@ form.addEventListener('submit', e => {
       ? (noAccInfo.innerHTML =
           'Niestety, nie możemy znaleźć konta z tym numerem. Wprowadź prawidłowy kod kraju lub <strong>zaloguj się za pomocą adresu e-mail.</strong>')
       : (noAccInfo.innerHTML = `Niestety, nie możemy znaleźć konta z tym adresem     e-mail. Spróbuj ponownie lub
-      <a class="no-account-info-link" href="index.html">utwórz nowe konto</a>.`);
+      <a class="no-account-info-link" href="/index.html">utwórz nowe konto</a>.`);
     noAccInfo.classList.remove('hidden');
     emailInput.classList.add('has-error');
     passwordInput.blur();
@@ -148,7 +148,7 @@ btnCaptcha.addEventListener('click', () => {
 
 // SESSION/LOCAL STORAGE
 if (localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn'))
-  window.location.href = 'browse.html';
+  window.location.href = '/src/pages/browse.html';
 
 if (sessionStorage.getItem('profileSelected'))
-  window.location.href = 'home.html';
+  window.location.href = '/src/pages/home.html';

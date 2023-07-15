@@ -194,7 +194,7 @@ function addProfileNames() {
 }
 
 function setUpCurrentProfile() {
-  profileLogos[0].src = `src/images/page-browse/profiles-${currentProfile.toLowerCase()}.png`;
+  profileLogos[0].src = `/src/images/page-browse/profiles-${currentProfile.toLowerCase()}.png`;
   profileLogos[0].alt = `Awatar użytkownika ${currentProfile}`;
 }
 
@@ -202,7 +202,7 @@ function setUpOtherProfiles() {
   profileLogos.forEach((profile, index) => {
     if (index === 0) return;
     else {
-      profile.src = `src/images/page-browse/profiles-${otherProfiles[
+      profile.src = `/src/images/page-browse/profiles-${otherProfiles[
         index - 1
       ].toLowerCase()}.png`;
       profile.alt = `Awatar użytkownika ${otherProfiles[index]}`;
@@ -683,4 +683,4 @@ if (
   !localStorage.getItem('isLoggedIn') &&
   !sessionStorage.getItem('isLoggedIn')
 )
-  window.location.href = 'login.html';
+  window.location.href = '/src/pages/login.html';

@@ -21,7 +21,7 @@ ctaForm.forEach(form => {
 
     if (validEmail) {
       displayValid(errorMsg, errorMsgCon, inputCon, btnCTA);
-      window.location.href = 'signup.html';
+      window.location.href = '/src/pages/signup.html';
       localStorage.setItem(
         'currentEmail',
         JSON.stringify({
@@ -150,7 +150,15 @@ function getFormElements(form) {
   const validation = validateEmail(email);
   const validEmail = validation?.[0];
 
-  return { inputCon, input, errorMsgCon, errorMsg, btnCTA, email, validEmail };
+  return {
+    inputCon,
+    input,
+    errorMsgCon,
+    errorMsg,
+    btnCTA,
+    email,
+    validEmail,
+  };
 }
 
 function validateEmail(email) {
@@ -242,7 +250,7 @@ if (!sessionStorage.getItem('isFirstTimeLoaded')) {
 }
 
 if (localStorage.getItem('isLoggedIn') || sessionStorage.getItem('isLoggedIn'))
-  window.location.href = 'browse.html';
+  window.location.href = '/src/pages/browse.html';
 
 if (sessionStorage.getItem('profileSelected'))
-  window.location.href = 'home.html';
+  window.location.href = '/src/pages/home.html';

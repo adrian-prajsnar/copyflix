@@ -25,7 +25,7 @@ if (
   !localStorage.getItem('isLoggedIn') &&
   !sessionStorage.getItem('isLoggedIn')
 )
-  window.location.href = 'login.html';
+  window.location.href = '/src/pages/login.html';
 
 if (sessionStorage.getItem('profileSelected'))
-  window.location.href = 'home.html';
+  window.location.href = '/src/pages/home.html';
