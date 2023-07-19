@@ -1,10 +1,10 @@
-@import '/src/styles/global.css';
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap');
+/* @import '/src/styles/global.css';
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap'); */
 
-body {
+/* body {
   background-color: var(--browse-home-bg-color);
   color: var(--main-font-color);
-}
+} */
 
 /***************************/
 /* MAIN VIEw  */

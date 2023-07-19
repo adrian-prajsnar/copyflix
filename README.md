@@ -1,6 +1,6 @@
 # NETFLIX-AP11
 
-https://netflix-ap11.netlify.app/
+[netflix-ap11.netlify.app](https://netflix-ap11.netlify.app/)
 
 <h3>GENERAL INFORMATION</h3>
 This application has been created just for learning purposes with all copyright to Netflix Polska. The main goal has been to map original Netflix website and practice my skills in pure HTML/CSS/JavaScript. You can open the page by live-server extension.
