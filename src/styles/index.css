@@ -1,9 +1,3 @@
-@import '/src/styles/global.css';
-
-/***************************/
-/* GENERAL STYLES  */
-/***************************/
-
 body {
   color: var(--main-font-color);
   background-color: var(--main-bg-color);
