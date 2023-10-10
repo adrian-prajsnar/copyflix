@@ -11,7 +11,7 @@ Netflix-ap11 is an educational project developed solely for learning purposes, w
 - Responsive Design: The entire webpage is fully functional and responsive, adapting seamlessly to screen sizes of up to approximately 250px.
 - Page Structure: The website comprises a main page, 'index.html,' and multiple subpages, each offering distinct functionality.
 - User Registration: On the main page, two forms with functional validation allow users to register. Submitting a valid email address redirects users to the 'signup' page.
-- User Login: Users can also access a 'login' page from 'index.html.' It includes login validation and provides three pre-configured test accounts for user convenience:
+- User Login: Users can also access a 'login' page from 'index.html.' It includes login validation and provides three pre-configured test accounts for user convenience: <br>
   _a. login: john.roller@example.com, password: 1234 <br>
   b. login: 568891231, password: PW1234 <br>
   c. login: jerry.buzzer@gmail.com, password: repeentacja1821_
