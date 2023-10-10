@@ -12,8 +12,8 @@ Netflix-ap11 is an educational project developed solely for learning purposes, w
 - Page Structure: The website comprises a main page, 'index.html,' and multiple subpages, each offering distinct functionality.
 - User Registration: On the main page, two forms with functional validation allow users to register. Submitting a valid email address redirects users to the 'signup' page.
 - User Login: Users can also access a 'login' page from 'index.html.' It includes login validation and provides three pre-configured test accounts for user convenience:
-  _a. login: john.roller@example.com, password: 1234
-  b. login: 568891231, password: PW1234
+  _a. login: john.roller@example.com, password: 1234 <br>
+  b. login: 568891231, password: PW1234 <br>
   c. login: jerry.buzzer@gmail.com, password: repeentacja1821_
 - Profile Selection: Upon successful login, users can select their account, which then redirects them to the 'home' page.
 - Content Library: The 'home' page displays a diverse collection of movies, series, and TV programs, all sourced from the https://developer.themoviedb.org/docs API. Users can explore a wide array of entertainment content.
