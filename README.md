@@ -1,6 +1,6 @@
 # Netflix-ap11
 
-[netflix-ap11.netlify.app](https://netflix-ap11.netlify.app/)
+[copyflix-ap11.netlify.app](https://copyflix-ap11.netlify.app/)
 
 ## Description
 
