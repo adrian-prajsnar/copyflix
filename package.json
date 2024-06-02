@@ -1,5 +1,5 @@
 {
-  "name": "netflix-ap11",
+  "name": "copyflix",
   "version": "1.0.0",
   "description": "Copy of Netflix application built with pure HTML/CSS/JavaScript.",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adrian-prajsnar/netflix-ap11.git"
+    "url": "git+https://github.com/adrian-prajsnar/copyflix.git"
   },
   "author": "Adrian Prajsnar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/adrian-prajsnar/netflix-ap11/issues"
+    "url": "https://github.com/adrian-prajsnar/copyflix/issues"
   },
-  "homepage": "https://github.com/adrian-prajsnar/netflix-ap11#readme",
+  "homepage": "https://github.com/adrian-prajsnar/copyflix#readme",
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.9.3",
     "parcel": "^2.9.3"

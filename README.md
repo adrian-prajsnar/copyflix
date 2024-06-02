@@ -50,7 +50,7 @@ Make sure you have the following software installed on your system:
 1. Clone the repository:
 
 ```
-git clone https://github.com/adrian-prajsnar/netflix-ap11.git
+git clone https://github.com/adrian-prajsnar/copyflix.git
 ```
 
 2. Navigate to the project folder:
