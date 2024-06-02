@@ -1,10 +1,10 @@
-# Netflix-ap11
+# Copyflix
 
 [copyflix-ap11.netlify.app](https://copyflix-ap11.netlify.app/)
 
 ## Description
 
-Netflix-ap11 is an educational project developed solely for learning purposes, with all copyrights belonging to Netflix Polska. The primary objective behind this project is to mirror the functionality of the original Netflix website while honing skills in pure **HTML, CSS, & JavaScript**.
+Copyflix is an educational project developed solely for learning purposes, with all copyrights belonging to Netflix Polska. The primary objective behind this project is to mirror the functionality of the original Netflix website while honing skills in pure **HTML, CSS, & JavaScript**.
 
 **Features:**
 
@@ -17,7 +17,7 @@ Netflix-ap11 is an educational project developed solely for learning purposes, w
   c. login: jerry.buzzer@gmail.com, password: repeentacja1821_
 - Profile Selection: Upon successful login, users can select their account, which then redirects them to the 'home' page.
 - Content Library: The 'home' page displays a diverse collection of movies, series, and TV programs, all sourced from the https://developer.themoviedb.org/docs API. Users can explore a wide array of entertainment content.
-- Frontend Emulation: Netflix-ap11 offers a frontend-focused experience with session and local storage, effectively simulating backend data. This approach facilitates skill development in frontend technologies without the need for complex backend systems.
+- Frontend Emulation: Copyflix offers a frontend-focused experience with session and local storage, effectively simulating backend data. This approach facilitates skill development in frontend technologies without the need for complex backend systems.
 
 **Future feature ideas:**
 
